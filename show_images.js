@@ -5,3 +5,16 @@ function show_text(){
     document.body.appendChild(newText);
     
 }
+
+function show_img(){
+
+    var img = document.createElement("img");
+
+    img.src = "gautam_face.jpg";
+    img.alt = "Mystery Face";
+    img.width = 300;
+    img.height = 400;
+
+    document.body.appendChild(img);
+
+}
