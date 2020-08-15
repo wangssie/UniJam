@@ -1,0 +1,60 @@
+#game{
+    font-family: monospace;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    background: black;
+
+}
+
+#name-prompt{
+    color: rgb(0, 195, 255);   
+    font-family: "Lucida Console", sans-serif;
+    font-size: 275%;
+    text-align: center;
+    
+}
+
+body{
+    background-color: rgb(1, 0, 65);
+}
+
+.player-input{
+ 
+    color: white;
+    border: 2px solid white;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+#input-box{
+    width: 500px;
+    height: 35px;
+
+}
+
+input[type = "text"]{
+
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+}
+
+#joined{
+    font-family: "Lucida Console";
+    color: white;
+    text-align: left;
+    font-size: 30px;
+    position: absolute;
+    left: 50px;
+}
+
+#players{
+    font-size: 30px;
+    color: yellow;
+    font-family: "Lucida Console";
+    position: relative;
+    padding: 100px;
+
+}
