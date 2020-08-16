@@ -1,29 +1,31 @@
+var Section1 = require('./section.js').Section1;
+var Section2 = require('./section.js').Section2;
 class round {
     usersWords;
-    givenWords;
     id;
     currentSection;
     sections;
-    constructor(id) {
+    user;
+    constructor(id, user) {
         this.usersWords = [];
-        this.givenWords = [];
         this.id = id;
-        this.currentSection=-1;
+        this.currentSection=0;
         this.sections = [new Section1(this), new Section2(this)];
+        this.user = user;
     }
 
     /* Methods*/
 
-    /* Get words from word DB */
+    /* start round */
+    startRound() {
+        this.sections[this.currentSection].start();
+    }
 
     /* start next section*/
     startNextSection() {
         this.currentSection++;
         this.sections[this.currentSection].start();
     }
-
-
-
 
     /* GETTER */
 
@@ -41,6 +43,9 @@ class round {
     }
     get lastWord() {
         this.givenWords[1];
+    }
+    get user() {
+        return this.user;
     }
 
    
