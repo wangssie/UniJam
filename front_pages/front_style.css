@@ -84,18 +84,13 @@ body{
 
     background-color: black; /* Green */
     border: none;
-    color: white;
-    padding: 10px 30px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-}
+    display: none;
 
-#submit:hover{
-    background-color: green;
-    transition: all 0.2s ease-in;
+    padding: 0px 0px;
 
 }
+
+
 
 .player-input{
     
