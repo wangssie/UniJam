@@ -148,3 +148,20 @@ a:visited {
     top: 650px;
     left: 1050px;
 }
+
+#instruction{
+    font-family: "Lucida Console";
+    color: rgb(0, 201, 228) ;
+    text-align: left;
+    font-size: 22px;
+    position: absolute;
+    top: 50px;
+    left: 1300px;
+    padding-right: 50px;
+}
+
+#instruction:hover{
+    background-color: green;
+    transition: all 0.2s ease-in;
+
+}
