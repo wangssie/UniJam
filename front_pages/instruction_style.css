@@ -1,0 +1,79 @@
+#game{
+    font-family: monospace;
+    font-size: 20px;
+    color: white;
+}
+
+#title{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    color: rgb(0, 201, 228);
+    top: 150px;
+    left: 200px;
+
+}
+
+#btm-title{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-style: italic;
+    color: rgb(0, 201, 228);
+    top: 240px;
+    left: 210px;
+
+}
+
+#definition{
+
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-style: bold;
+    color: rgb(0, 201, 228);
+    top: 310px;
+    left: 210px;
+
+}
+
+#definition-sub{
+
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-style: italic;
+    color: rgb(0, 201, 228);
+    top: 360px;
+    left: 250px;
+}
+
+#instruction-title{
+    
+    position: absolute;
+    color: rgb(0, 201, 228);   
+    font-family: 'Times New Roman', Times, serif;
+    top: 90px;
+    left: 1000px;
+    
+    
+}
+
+body{
+    background-color: black;
+}
+
+.line{
+    position: absolute;
+    left: 700px;
+    border-left: 5px solid white;
+    height: 600px;
+
+}
+
+
+a:link {
+    color: white }
+
+a:visited {
+    color: rgb(0, 201, 228) }
