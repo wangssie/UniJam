@@ -12,7 +12,7 @@
     color: rgb(0, 201, 228);
     top: 150px;
     left: 200px;
-    opacity: 0;
+
 }
 
 #btm-title{
@@ -59,7 +59,7 @@
     font-family: 'Times New Roman', Times, serif;
     top: 190px;
     left: 900px;
-    
+    opacity: 0;
     
 }
 
