@@ -11,7 +11,7 @@
     color: rgb(0, 201, 228);
     top: 150px;
     left: 200px;
-
+    opacity: 0;
 }
 
 #btm-title{
@@ -22,6 +22,7 @@
     color: rgb(0, 201, 228);
     top: 240px;
     left: 210px;
+    opacity: 0;
 
 }
 
@@ -89,7 +90,6 @@ body{
     padding: 0px 0px;
 
 }
-
 
 
 .player-input{
