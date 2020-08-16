@@ -4,6 +4,11 @@
     color: white;
 }
 
+a{
+    color: white;
+
+}
+
 .line{
     position: absolute;
     top: 200px;
