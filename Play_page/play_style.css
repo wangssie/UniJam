@@ -49,8 +49,7 @@ body{
 }
 
 #start{
-    font-size: 40px;
-    
+    font-size: 40px;   
 }
 
 #start-word{
@@ -92,4 +91,23 @@ body{
 #path-text{
     font-size: 20px;
 
+}
+
+.next-box{
+    text-align: right;
+    color: white;
+    position: relative;
+    bottom: 25px;
+    left: 450px;
+
+}
+
+#next{
+    font-size: 40px;
+}
+
+#next-word{
+    position: relative;
+    bottom: 15px;
+    font-size: 45px;
 }
