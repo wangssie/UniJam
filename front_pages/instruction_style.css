@@ -1,14 +1,14 @@
 #game{
     font-family: monospace;
     font-size: 20px;
-    color: white;
+    color: rgb(131, 79, 79);
 }
 
 #title{
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
     font-size: 60px;
-    color: rgb(0, 201, 228);
+    color: rgb(131, 79, 79);
     top: 150px;
     left: 200px;
 
@@ -19,7 +19,7 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     font-style: italic;
-    color: rgb(0, 201, 228);
+    color: rgb(131, 79, 79);
     top: 240px;
     left: 210px;
 
@@ -31,7 +31,7 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
     font-style: bold;
-    color: rgb(0, 201, 228);
+    color: rgb(131, 79, 79);
     top: 310px;
     left: 210px;
 
@@ -43,7 +43,7 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
     font-style: italic;
-    color: rgb(0, 201, 228);
+    color: rgb(131, 79, 79);
     top: 360px;
     left: 250px;
 }
@@ -51,7 +51,7 @@
 #instruction-title{
     
     position: absolute;
-    color: rgb(0, 201, 228);   
+    color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
     top: 90px;
     left: 1000px;
@@ -60,29 +60,29 @@
 }
 
 body{
-    background-color: black;
+    background-color: rgb(255, 245, 230);
 }
 
 .line{
     position: absolute;
     left: 700px;
-    border-left: 5px solid white;
+    border-left: 5px solid rgb(131, 79, 79);
     height: 600px;
 
 }
 
 
 a:link {
-    color: white 
+    color: rgb(131, 79, 79) 
 }
 
 a:visited {
-    color: rgb(0, 201, 228) 
+    color: rgb(131, 79, 79) 
 }
 
 #instructions{
     position: absolute;
-    color: rgb(0, 201, 228);   
+    color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     top: 150px;
@@ -93,7 +93,7 @@ a:visited {
 
 #round1{
     position: absolute;
-    color: rgb(0, 201, 228);   
+    color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     top: 300px;
@@ -103,7 +103,7 @@ a:visited {
 
 #round2{
     position: absolute;
-    color: rgb(0, 201, 228);   
+    color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     top: 400px;
@@ -113,7 +113,7 @@ a:visited {
 
 #round3{
     position: absolute;
-    color: rgb(0, 201, 228);   
+    color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     top: 500px;
@@ -123,7 +123,7 @@ a:visited {
 
 #back{
     font-family: "Lucida Console";
-    color: rgb(0, 201, 228) ;
+    color: rgb(131, 79, 79) ;
     text-align: left;
     font-size: 22px;
     position: absolute;
@@ -133,7 +133,7 @@ a:visited {
 }
 
 #back:hover{
-    background-color: white;
+    background-color: rgb(131, 79, 79);
     transition: all 0.2s ease-in;
 
 }
