@@ -54,7 +54,7 @@ function fade_in(){
     var instruction = document.getElementById("instruction");
     var joined = document.getElementById("joined");
     var play = document.getElementById("play");
-    var input = document.querySelector(".player-input");
+    var input = document.getElementById("input-box");
     var name = document.getElementById("name-prompt");
 
     opacity_sub = Number(window.getComputedStyle(subtitle).getPropertyValue("opacity"));

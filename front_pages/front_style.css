@@ -8,21 +8,21 @@
 #title{
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 60px;
+    font-size: 4vw;
     color: rgb(131, 79, 79);
-    top: 150px;
-    left: 200px;
+    top: 21%;
+    left: 10.3%;
 
 }
 
 #btm-title{
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 1.3vw;
     font-style: italic;
     color: rgb(131, 79, 79);
-    top: 240px;
-    left: 210px;
+    top: 33%;
+    left: 11%;
     opacity: 0;
 
 }
@@ -31,11 +31,11 @@
 
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 30px;
+    font-size: 2vw;
     font-style: bold;
     color: rgb(131, 79, 79);
-    top: 310px;
-    left: 210px;
+    top: 42%;
+    left: 13%;
     opacity: 0;
 
 }
@@ -44,21 +44,22 @@
 
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 30px;
+    font-size: 2vw;
     font-style: italic;
     color: rgb(131, 79, 79);
-    top: 360px;
-    left: 250px;
+    top: 48%;
+    left: 17%;
     opacity: 0;
 }
 
 #name-prompt{
     
+    font-size: 2.2vw;
     position: absolute;
     color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
-    top: 190px;
-    left: 900px;
+    top: 24%;
+    left: 58%;
     opacity: 0;
     
 }
@@ -70,7 +71,7 @@ body{
 
 .line{
     position: absolute;
-    left: 700px;
+    left: 46%;
     border-left: 5px solid rgb(131, 79, 79);
     height: 0px;  
     animation: increase 2s; 
@@ -79,7 +80,7 @@ body{
 
 @keyframes increase {
     100% {
-        height: 600px;
+        height: 75%;
     }
 }
 
@@ -94,57 +95,49 @@ body{
 
 }
 
-
-.player-input{
-    
-    position: absolute;
-    top: 250px;
-    left: 750px;
-    color: rgb(131, 79, 79);
-    border: 4px solid rgb(131, 79, 79);
-    margin: 20px;
-    padding: 20px;
-    opacity: 0;
-    
-}
-
 #input-box{
-    width: 300px;
-    height: 35px;
+    position: absolute;
+    top: 32%;
+    left: 49%;
+    border: 4px solid rgb(131, 79, 79);
+    width: 20%;
+    height: 2%;
+    margin: 1%;
+    padding: 1%;
     transition: width .35s ease-in-out;
-    opacity: 1;
+    opacity: 0;
 }
 
 #input-box:focus{
-    width: 500px;
+    width: 30%;
 
 }
 
 input[type = "text"]{
 
     font-family: monospace, sans-serif;
-    font-size: 25px;
+    font-size: 1.5vw;
 }
 
 #joined{
     font-family: "Lucida Console";
     color: rgb(131, 79, 79);
     text-align: left;
-    font-size: 22px;
+    font-size: 1.6vw;
     position: absolute;
-    top:390px;
-    left: 760px;
+    top: 52%;
+    left: 50.2%;
     opacity: 0;
 }
 
 #players{
-    font-size: 22px;
+    font-size: 1.6vw;
     color: rgb(131, 79, 79);
     font-family: "Lucida Console";
-    position: relative;
-    top: 400px;
-    left: 800px;
-    padding: 0px 20px;
+    position: absolute;
+    top: 60%;
+    left: 52%;
+    padding: 0% 5%;
 
 }
 
@@ -158,10 +151,10 @@ a:visited {
     font-family: "Lucida Console";
     color: rgb(131, 79, 79) ;
     text-align: left;
-    font-size: 22px;
+    font-size: 1.6vw;
     position: absolute;
-    top: 650px;
-    left: 1050px;
+    top: 89%;
+    left: 67%;
     width: 0px;
     padding: 0px;
     transition: width 1s;
@@ -179,11 +172,11 @@ a:visited {
     font-family: "Lucida Console";
     color: rgb(131, 79, 79) ;
     text-align: left;
-    font-size: 22px;
+    font-size: 1.5vw;
     position: absolute;
-    top: 50px;
-    left: 1300px;
-    padding-right: 50px;
+    top: 5%;
+    left: 87%;
+    
     opacity: 0;
 }
 

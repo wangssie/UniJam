@@ -7,21 +7,21 @@
 #title{
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 60px;
+    font-size: 4vw;
     color: rgb(131, 79, 79);
-    top: 150px;
-    left: 200px;
+    top: 21%;
+    left: 10.3%;
 
 }
 
 #btm-title{
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 1.3vw;
     font-style: italic;
     color: rgb(131, 79, 79);
-    top: 240px;
-    left: 210px;
+    top: 33%;
+    left: 11%;
 
 }
 
@@ -29,11 +29,11 @@
 
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 30px;
+    font-size: 2vw;
     font-style: bold;
     color: rgb(131, 79, 79);
-    top: 310px;
-    left: 210px;
+    top: 42%;
+    left: 13%;
 
 }
 
@@ -41,11 +41,11 @@
 
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 30px;
+    font-size: 2vw;
     font-style: italic;
     color: rgb(131, 79, 79);
-    top: 360px;
-    left: 250px;
+    top: 48%;
+    left: 17%;
 }
 
 #instruction-title{
@@ -53,9 +53,9 @@
     position: absolute;
     color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
-    top: 90px;
-    left: 1000px;
-    
+    font-size: 2vw;
+    top: 10%;
+    left: 65%;   
     
 }
 
@@ -65,12 +65,12 @@ body{
 
 .line{
     position: absolute;
-    left: 700px;
+    left: 46%;
     border-left: 5px solid rgb(131, 79, 79);
-    height: 600px;
-
+    height: 75%;  
+    animation: increase 2s; 
+    animation-fill-mode: forwards;
 }
-
 
 a:link {
     color: rgb(131, 79, 79) 
@@ -84,9 +84,9 @@ a:visited {
     position: absolute;
     color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    top: 150px;
-    left: 750px;
+    font-size: 1.2vw;
+    top: 21%;
+    left: 49%;
     padding-right: 50px;
 }
 
@@ -95,9 +95,9 @@ a:visited {
     position: absolute;
     color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    top: 300px;
-    left: 750px;
+    font-size: 1.3vw;
+    top: 40%;
+    left: 49%;
     padding-right: 50px;
 }
 
@@ -105,9 +105,9 @@ a:visited {
     position: absolute;
     color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    top: 400px;
-    left: 750px;
+    font-size: 1.3vw;
+    top: 52.5%;
+    left: 49%;
     padding-right: 50px;
 }
 
@@ -115,9 +115,9 @@ a:visited {
     position: absolute;
     color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    top: 500px;
-    left: 750px;
+    font-size: 1.3vw;
+    top: 66%;
+    left: 49%;
     padding-right: 50px;
 }
 
@@ -125,11 +125,10 @@ a:visited {
     font-family: "Lucida Console";
     color: rgb(131, 79, 79) ;
     text-align: left;
-    font-size: 22px;
+    font-size: 1.5vw;
     position: absolute;
-    top: 50px;
-    left: 1300px;
-    padding-right: 25px;
+    top: 5%;
+    left: 87%;
 }
 
 #back:hover{
