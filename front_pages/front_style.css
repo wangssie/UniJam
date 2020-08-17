@@ -139,7 +139,7 @@ input[type = "text"]{
 
 #players{
     font-size: 22px;
-    color: rgb(255, 0, 179);
+    color: rgb(131, 79, 79);
     font-family: "Lucida Console";
     position: relative;
     top: 400px;
@@ -165,14 +165,14 @@ a:visited {
     width: 0px;
     padding: 0px;
     transition: width 1s;
-    background: rgb(131, 79, 79);
+    background: lightgrey;
     border:none;
     opacity: 0;
 }
 
 #play:hover{
     width: 75px;
-
+    color: rgb(175, 95, 95);
 }
 
 #instruction{
@@ -190,5 +190,6 @@ a:visited {
 #instruction:hover{
     background-color: rgb(131, 79, 79);
     transition: all 0.2s ease-in;
+    color: lightgrey;
 
 }

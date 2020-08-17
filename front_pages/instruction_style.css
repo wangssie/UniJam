@@ -135,5 +135,6 @@ a:visited {
 #back:hover{
     background-color: rgb(131, 79, 79);
     transition: all 0.2s ease-in;
+    color: lightgrey;
 
 }
