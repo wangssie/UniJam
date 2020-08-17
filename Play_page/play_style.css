@@ -49,6 +49,7 @@ body{
 }
 
 #start{
+    font-style: italic;
     font-size: 40px;   
 }
 
@@ -70,6 +71,7 @@ body{
 }
 
 #end{
+    font-style: italic;
     font-size: 40px;
 }
 
@@ -93,21 +95,18 @@ body{
 
 }
 
-.next-box{
-    text-align: right;
-    color: white;
-    position: relative;
-    bottom: 25px;
-    left: 450px;
-
-}
-
 #next{
+    position: absolute;
+    top: 500px;
+    left: 600px;
     font-size: 40px;
+    color: white;
 }
 
 #next-word{
-    position: relative;
-    bottom: 15px;
-    font-size: 45px;
+    position: absolute;
+    top: 600px;
+    left: 575px;
+    color: white;
+    font-size: 40px;
 }
