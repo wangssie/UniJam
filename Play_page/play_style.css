@@ -11,8 +11,8 @@ a{
 
 .line{
     position: absolute;
-    top: 200px;
-    left: 725px;
+    top: 25%;
+    left: 48.5%;
     border-left: 5px solid rgb(131, 79, 79);
     height: 0px;
     animation: increase 2s; 
@@ -32,81 +32,81 @@ body{
 #btm-title{
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 50px;
+    font-size: 4.5vw;
     font-style: italic;
     color: rgb(131, 79, 79);
-    top: 80px;
-    left: 625px;
+    top: 10%;
+    left: 40%;
 
 }
 
 .start-box{
     color: rgb(131, 79, 79);
-    position: relative;
-    top: 150px;
-    left: 70px;
+    position: absolute;
+    left: 5%;
+    bottom: 60%;
 
 }
 
 #start{
     font-style: italic;
-    font-size: 40px;   
+    font-size: 2.4vw;   
 }
 
 #start-word{
     position: relative;
-    bottom: 15px;
-    font-size: 45px;
+    bottom: 8%;
+    font-size: 2.7vw;
 
 }
 
-.end-box{
-    text-align: right;
+.end-box{  
+    margin-right: 3%;
     color: rgb(131, 79, 79);
-    position: relative;
-    bottom: 25px;
-    left: 900px;
-    margin-right: 980px;
+    position: absolute;
+    bottom: 60%;
+    left: 70%;
 
 }
 
 #end{
+    text-align: right;
     font-style: italic;
-    font-size: 40px;
+    font-size: 2.4vw;
 }
 
 #end-word{
     position: relative;
-    bottom: 15px;
-    font-size: 45px;
+    bottom: 8%;
+    font-size: 2.7vw;
 
 }
 
 .path{
     position: absolute;
-    top: 380px;
-    left: 90px;
+    top: 45%;
+    left: 5%;
     color: rgb(131, 79, 79); 
 
 }
 
 #path-text{
-    font-size: 20px;
+    font-size: 1.3vw;
 
 }
 
 #next{
     position: absolute;
-    top: 500px;
-    left: 600px;
-    font-size: 40px;
+    top: 55%;
+    left: 40%;
+    font-size: 2.7vw;
     color: rgb(131, 79, 79);
 }
 
 #next-word{
     position: absolute;
-    top: 600px;
-    left: 575px;
+    top: 61%;
+    left: 37%;
     color: rgb(131, 79, 79);
-    font-size: 40px;
+    font-size: 3vw;
 }
