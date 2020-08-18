@@ -1,5 +1,5 @@
 var joined_list = [];
-
+var num_players = 0;
 var input = document.getElementById("input-box");
 
 input.addEventListener("keyup", function(event) {
@@ -13,18 +13,30 @@ input.addEventListener("keyup", function(event) {
 });
 
 function player_input(){
+
+
     var input = document.getElementById("input-box").value;
-  
+
     joined_list.push(input);
 
-    document.getElementById("joined-list").innerHTML += "<h3 id = 'players'>"+ input + "</h3>";
+    document.getElementById("joined-list").innerHTML += "<li id = 'players'>"+ input + "</li>";
 
     document.getElementById("input-box").value = "";
 
     console.log("Player name: " + input);
 
+    num_players++;
+    
+    update_player_count();
+    
     console.log(joined_list);
     
+}
+
+function update_player_count(){
+    
+    document.getElementById("player-count").innerHTML = "Player Count: " + num_players;
+
 }
 
 var opacity_title = 0;
@@ -37,6 +49,7 @@ var opacity_joined = 0;
 var opacity_play = 0;
 var opacity_input = 0;
 var opacity_name = 0;
+var opacity_count = 0;
 var intervalID = 0;
 
 function interval(){
@@ -56,6 +69,7 @@ function fade_in(){
     var play = document.getElementById("play");
     var input = document.getElementById("input-box");
     var name = document.getElementById("name-prompt");
+    var count = document.getElementById("player-count");
 
     opacity_sub = Number(window.getComputedStyle(subtitle).getPropertyValue("opacity"));
     opacity_game = Number(window.getComputedStyle(game).getPropertyValue("opacity"));
@@ -66,6 +80,7 @@ function fade_in(){
     opacity_play = Number(window.getComputedStyle(play).getPropertyValue("opacity"));
     opacity_input = Number(window.getComputedStyle(input).getPropertyValue("opacity"));
     opacity_name = Number(window.getComputedStyle(name).getPropertyValue("opacity"));
+    opacity_count = Number(window.getComputedStyle(name).getPropertyValue("opacity"));
 
     if (opacity_sub < 1){
         
@@ -78,6 +93,7 @@ function fade_in(){
         opacity_joined += 0.02;
         opacity_play += 0.02;
         opacity_input += 0.02;
+        opacity_count += 0.02;
 
         subtitle.style.opacity = opacity_sub;
         game.style.opacity = opacity_game;
@@ -88,6 +104,7 @@ function fade_in(){
         play.style.opacity = opacity_play;
         input.style.opacity = opacity_input;
         name.style.opacity = opacity_name;
+        count.style.opacity = opacity_count;
 
     }
     else{

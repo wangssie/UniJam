@@ -130,15 +130,29 @@ input[type = "text"]{
     opacity: 0;
 }
 
-#players{
-    font-size: 1.6vw;
-    color: rgb(131, 79, 79);
-    font-family: "Lucida Console";
+#joined-list{
     position: absolute;
     top: 60%;
     left: 52%;
-    padding: 0% 5%;
 
+}
+
+#players{
+    font-family: "Lucida Console";
+    color: rgb(131, 79, 79);
+    text-align: left;
+    font-size: 1.6vw;
+
+}
+
+#player-count{
+
+    position: absolute;
+    font-family: monospace;
+    color: rgb(131, 79, 79);
+    font-size: 1.5vw;
+    left: 78%;
+    top: 51%;
 }
 
 a:link {
