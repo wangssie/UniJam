@@ -1,0 +1,22 @@
+{
+  "name": "unijam",
+  "version": "1.0.0",
+  "description": "Prototype of konek game",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangssie/UniJam.git"
+  },
+  "author": "Serena, Ley, Gautam, Kelvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangssie/UniJam/issues"
+  },
+  "homepage": "https://github.com/wangssie/UniJam#readme",
+  "dependencies": {
+    "easytimer.js": "^4.3.0"
+  }
+}

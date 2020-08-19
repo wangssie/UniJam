@@ -3,6 +3,7 @@ let players = []
 const maxPlayers = 2;
 const Player = require('./player');
 const roundTotal = 5;
+const Timer = require('easytimer.js').Timer;
 
 // the primary engine of the game 
 function main() {
@@ -24,9 +25,8 @@ function main() {
         }
     }
 
-    //part 3: the score
+    //part 3: the score and ending page 
     gameEnd(); 
-    
 
 }
 
@@ -54,7 +54,10 @@ function enoughPlayers() {
 
 // displays playing page 
 function startRound() {
-
+    // create timer 
+    section1(timer);
+    // event listener for when timer is done 
+    section2();
 }
 
 // page where other players checks if words are valid 
