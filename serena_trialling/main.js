@@ -2,6 +2,7 @@
 let players = []
 const maxPlayers = 2;
 const Player = require('./player');
+const roundTotal = 5;
 
 // the primary engine of the game 
 function main() {
@@ -14,9 +15,17 @@ function main() {
 
     
     //part 2: the game 
-    
+    for (let i=0; i<=roundTotal; i++) {
+        for (let j=0; j<=players.length; j++) {
+            startRound();
+            checkRound();
+            // while ***play button not clicked 
+                // do nothing 
+        }
+    }
 
-
+    //part 3: the score
+    gameEnd(); 
     
 
 }
@@ -33,6 +42,7 @@ function createPlayer(username) {
     }
 }
 
+// checks if enough players have entered before game starts
 function enoughPlayers() {
     if (players.length === maxPlayers) {
         return true;
@@ -40,6 +50,21 @@ function enoughPlayers() {
     else {
         return false;
     }
+}
+
+// displays playing page 
+function startRound() {
+
+}
+
+// page where other players checks if words are valid 
+function checkRound() {
+
+}
+
+// displays the ending page with players scores and option to play again
+function gameEnd() {
+
 }
 
 main();
