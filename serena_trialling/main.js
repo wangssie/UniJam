@@ -18,8 +18,8 @@ let currentPlayer = 0;
 
 // the primary engine of the game 
 function main() {
-    // EVENT LISTENER: on submission of username, evoke createPlayer()
-    // EVENT LISTENER: on click of start, evoke function checkStart()
+    // EVENT LISTENER: *** on submission of username, evoke createPlayer()
+    // EVENT LISTENER: *** on click of start, evoke function checkStart()
 }
 
 // will start game if enough players exist
@@ -35,13 +35,13 @@ function createPlayer(username) {
         players.push(new Player(username))
         // ***add player name to screen
     }
+    // too many players 
     else {
-        // too many players 
         // *** display error on screen 
     }
 }
 
-// displays playing page 
+
 function startRound(player) {
     // rounds played reached total rounds
     if (roundsPlayed===roundTotal) {
@@ -77,11 +77,12 @@ function section1(player) {
 function addWordToCurrentList(word, player) {
     currentPlayersList.push(word);
     player.addScore(); // increase score by 1 when player adds a word
+    // *** have player's score linked to html
 }
 
 // *** changes the seconds on the html 
 function displaySeconds(timer) {
-    console.log(timer.getTotalTimeValues()['seconds']);
+    console.log(timer.getTotalTimeValues()['seconds']); // just printing to console for now 
 }
 
 function section2(player) {
@@ -98,7 +99,7 @@ function section2(player) {
     function changeEndTime(timer) {
         endTime = timer.getTotalTimeValues()['seconds'];
         if (endtime%2===0) {
-            player.removeScore();
+            player.removeScore(); // *** update score of current player 
         }
     }
 
@@ -109,11 +110,17 @@ function section2(player) {
 // page where other players checks if words are valid 
 function checkRound() {
     currentPlayersList.push(word); // add to player's current list of words
-
-    // event listener *** for adding words
+    // event listener *** for adding invalid words, evoke invalidWord()
     // event listener *** when done is clicked: nextRound() evoked
 }
 
+// evoked when player determines word in chain is invalid
+function invalidWord() {
+    // *** crosses off word 
+    players[currentPlayer].removeScore(); // *** update changes score 
+}
+
+// evoked once checking stage is complete
 function nextRound() {
     currentPlayersList = []; // clear list of current player's words
     roundsPlayed+=currentPlayer; // will +1 once second player was last to play
@@ -126,7 +133,7 @@ function gameEnd() {
     // ***display scores of players 
     // ***displayer name of winner 
     
-    // EVENT LISTENER *** play again evoke restart()
+    // EVENT LISTENER *** play again, evoke restart()
 }
 
 
