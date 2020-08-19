@@ -22,6 +22,9 @@ module.exports = class Player {
         this.score -= score;
     }
 
+    restart() {
+        this.score = 0;
+    }
 
 
 }
