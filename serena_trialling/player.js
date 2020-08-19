@@ -14,4 +14,14 @@ module.exports = class Player {
         return this.username;
     }
 
+    addScore(score=1) {
+        this.score+=score;
+    }
+
+    removeScore(score=1) {
+        this.score -= score;
+    }
+
+
+
 }
