@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/wangssie/UniJam#readme",
   "dependencies": {
-    "easytimer.js": "^4.3.0"
+    "easytimer.js": "^4.3.0",
+    "xlsx": "^0.16.6"
   }
 }
