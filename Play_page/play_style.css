@@ -35,8 +35,46 @@ body{
     font-size: 4.5vw;
     font-style: italic;
     color: rgb(131, 79, 79);
-    top: 10%;
+    top: 7%;
     left: 40%;
+
+}
+
+#round-count{
+
+    position: absolute;
+    bottom: 91%;
+    left: 20%;
+    color: rgb(131, 79, 79);
+    font-family: monospace;
+    font-style: oblique;
+    font-size: 1.7vw;
+
+}
+
+#timer{
+
+    position: absolute;
+    color: rgb(131, 79, 79);
+    bottom: 90%;
+    left: 46%;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: bold;
+    font-size: 2.4vw;
+
+}
+
+#player-name{
+    
+    position: absolute;
+    bottom: 92%;
+    left: 70%;
+    color: rgb(131, 79, 79);
+    text-align: right;
+    font-family: monospace;
+    font-style: bold;
+    font-size: 1.4vw;
+    width: 29%;
 
 }
 
@@ -109,4 +147,23 @@ body{
     left: 37%;
     color: rgb(131, 79, 79);
     font-size: 3vw;
+}
+
+#next-button{
+    position: absolute;
+    top: 83%;
+    left: 47.1%;
+    font-size: 1.5vw;
+    font-family: monospace;
+    color: rgb(131, 79, 79);
+    background-color: rgb(255, 245, 230);
+    border: none;
+
+}
+
+#next-button:hover{
+
+    background-color: rgb(131, 79, 79);
+    transition: all 0.2s ease-in;
+    color: rgb(255, 245, 230);
 }
