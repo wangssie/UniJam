@@ -1,15 +1,12 @@
 // imports 
 const Timer = require('easytimer.js').Timer;
-const addScore = require('./front_bundle').addScore;
 const WordDatabase = require('./WordDatabase');
 const GameDatabase = require('./GameDatabase');
-const roundTotal = require('./front_bundle').roundTotal;
-var section1Timelimit = require('./front_bundle').section1Timelimit;
 const Player = require('./player');
 
 function startRound() {
     // rounds played reached total rounds
-    if (GameDatabase.roundsPlayed===roundTotal) {
+    if (GameDatabase.roundsPlayed===GameDatabase.roundTotal) {
         // HTML *** go to end.js file
     }
     // begin section 1 for current player 
@@ -26,7 +23,7 @@ function section1(player) {
 
     var timer = new Timer();
 
-    timer.start({startValues: [0,section1Timelimit+1,0,0,0], target: [0,0,0,0,0], countdown:true, callback: displaySeconds});
+    timer.start({startValues: [0,GameDatabase.section1Timelimit+1,0,0,0], target: [0,0,0,0,0], countdown:true, callback: displaySeconds});
     // *** EVENT LISTENER: if word is inputted, evoke addWordToCurrentList(word, player)
     
     // Go to section 2 once timer has finished 
@@ -49,7 +46,7 @@ function section2(player) {
     var endTime = 0;
     
     var timer = new Timer();
-    timer.start({startValues: [0,0,0,0,0], target:[0,section1Timelimit*2,0,0,0], callback:displaySeconds})
+    timer.start({startValues: [0,0,0,0,0], target:[0,GameDatabase.section1Timelimit*2,0,0,0], callback:displaySeconds})
     timer.addEventListener('secondsUpdated', (t)=>changeEndTime(timer))
     
     // deduct score from player every 2 seconds that passes
