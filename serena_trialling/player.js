@@ -1,4 +1,4 @@
-module.exports = class Player {
+class Player {
     username;
     score;
     constructor(username) {
@@ -28,3 +28,5 @@ module.exports = class Player {
 
 
 }
+module.exports = Player;
+module.exports.addScore = Player.addScore;
