@@ -44,6 +44,7 @@ function addWordToCurrentList(word, player) {
 
 function section2(player) {
     var word = getNewWord();
+    GameDatabase.lastWord = word;
     var endTime = 0;
     
     var timer = new Timer();
@@ -58,8 +59,7 @@ function section2(player) {
         }
     }
 
-    // EVENTLISTENER: ***when submit is made, evoke checkRound(word)     
-
+    // EVENTLISTENER: ***when submit is made, go to check.js
 }
 
 

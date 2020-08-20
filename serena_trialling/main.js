@@ -49,5 +49,5 @@ function createPlayer(username) {
 main();
 
 // debugging
-checkStart()
-createPlayer('user');
+//checkStart()
+//createPlayer('user');

@@ -29,4 +29,3 @@ class Player {
 
 }
 module.exports = Player;
-module.exports.addScore = Player.addScore;
