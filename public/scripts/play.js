@@ -1,10 +1,10 @@
 // imports 
 const Timer = require('easytimer.js').Timer;
-const addScore = require('./player').addScore;
+const addScore = require('./front_bundle').addScore;
 const WordDatabase = require('./WordDatabase');
 const GameDatabase = require('./GameDatabase');
-const roundTotal = require('./main').roundTotal;
-var section1Timelimit = require('./main').section1Timelimit;
+const roundTotal = require('./front_bundle').roundTotal;
+var section1Timelimit = require('./front_bundle').section1Timelimit;
 const Player = require('./player');
 
 function startRound() {
@@ -22,6 +22,7 @@ function section1(player) {
     var word = getNewWord();
     GameDatabase.currentPlayersList.push(word);  // add to current player's list of words 
     // *** Put word onto html 
+    show_start_word(word);
 
     var timer = new Timer();
 
@@ -78,6 +79,41 @@ function getNewWord() {
 }
 
 startRound();
+
+function show_start_word(){
+
+    document.getElementById("start-word").innerHTML = start_word
+    word_path.push(start_word);
+
+}
+
+show_start_word();
+
+var input = document.getElementById("next-word-input");
+
+input.addEventListener("keyup", function(event) {
+  
+    if (event.keyCode === 13) {
+      
+      event.preventDefault();
+      
+      document.getElementById("submit").click();
+    }
+  });
+
+function add_to_path(){
+
+    let input_word = input.value;
+    console.log(input_word);
+    
+    word_path.push(input_word);
+
+    document.getElementById("path-container").innerHTML += "<h3 id = 'path-format'>" + input_word + "</h3>";
+    console.log(word_path);
+
+    input.value = "";
+
+}
 
 //debug
 //var rando = new Player('serena')

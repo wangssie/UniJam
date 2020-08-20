@@ -103,13 +103,6 @@ function fade_in(){
 
 interval();
 
-// the primary engine of the game 
-function main() {
-    //var input = document.getElementById("input-box").value;
-    // EVENT LISTENER: *** on submission of username, evoke createPlayer()
-    // EVENT LISTENER: *** on click of start, evoke function checkStart()
-}
-
 // will start game if enough players exist            
 function checkStart() {
     if(GameDatabase.players.length===maxPlayers) {
@@ -149,8 +142,6 @@ function player_input(){
     document.getElementById("joined-list").innerHTML += "<li id = 'players'>"+ name + "</li>";
 
     document.getElementById("input-box").value = "";
-
-    console.log("Player name: " + name);
     
     update_player_count();
     
