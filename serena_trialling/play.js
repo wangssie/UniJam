@@ -25,8 +25,7 @@ function section1(player) {
 
     var timer = new Timer();
 
-    timer.start({startValues: [0,2,0,0,0], target: [0,0,0,0,0], countdown:true, callback: displaySeconds});
-    console.log('start');
+    timer.start({startValues: [0,section1Timelimit+1,0,0,0], target: [0,0,0,0,0], countdown:true, callback: displaySeconds});
     // *** EVENT LISTENER: if word is inputted, evoke addWordToCurrentList(word, player)
     
     // Go to section 2 once timer has finished 
@@ -48,9 +47,9 @@ function section2(player) {
     var endTime = 0;
     
     var timer = new Timer();
-    timer.start({target:[0,5,0,0,0], callback:(t)=>changeEndTime(t)})
-    timer.addEventListener('secondsUpdated', displaySeconds)
-
+    timer.start({startValues: [0,0,0,0,0], target:[0,section1Timelimit*2,0,0,0], callback:displaySeconds})
+    timer.addEventListener('secondsUpdated', (t)=>changeEndTime(timer))
+    
     // deduct score from player every 2 seconds that passes
     function changeEndTime(timer) {
         endTime = timer.getTotalTimeValues()['seconds'];
@@ -78,10 +77,10 @@ function getNewWord() {
     return word;
 }
 
-//startRound();
+startRound();
 
 //debug
-var rando = new Player('serena')
-section1(rando);
+//var rando = new Player('serena')
+//section1(rando);
 //addWordToCurrentList('happy', rando);
 //section2(rando);
