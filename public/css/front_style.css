@@ -84,17 +84,6 @@ body{
     }
 }
 
-
-#submit{
-
-    background-color: black; /* Green */
-    border: none;
-    display: none;
-
-    padding: 0px 0px;
-
-}
-
 #input-box{
     position: absolute;
     top: 32%;
