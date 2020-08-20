@@ -4,4 +4,5 @@ module.exports = class GameDatabase {
     static currentPlayersList = [];
     static roundsPlayed = 0;
     static currentPlayer = 0; 
+    static lastWord = '';
 }
