@@ -1,6 +1,6 @@
 var word_path = [];
-var allowSubmit = false;
-var timerLimit1 =16;
+var allowSubmit = true;
+var timerLimit1 =5;
 
 function show_start_word(){
 
@@ -60,7 +60,9 @@ function timerDecrease() {
       timerLimit1--;
       document.getElementById('timer').innerHTML = ("0"+timerLimit1).slice(-2);
   }
+  
   var timer_stop = setTimeout(cancelTimer, timerLimit1*1000);
+
   function cancelTimer() {
       clearInterval(timer);
       // trigger function that stops submission option
@@ -77,3 +79,16 @@ function timerDecrease() {
       timerLimit1++;
       document.getElementById('timer').innerHTML = ("0"+timerLimit1).slice(-2);
   }
+
+function submitWords() {
+  let data = {word_path}
+  const options = {
+    method: 'POST',
+    headers: {
+        "Content-type": 'application/json'
+    },
+    body: JSON.stringify(data)
+  };
+    fetch('/play', options);
+}
+
