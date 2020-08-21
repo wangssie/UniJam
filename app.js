@@ -35,7 +35,9 @@ app.get("/play", function(req, res){
     var word2;
     do {word2= WordDataBase.getRandomWord()} while (GameDataBase.wordsUsed.includes(word2))
     
-    res.render("play", {word1: word1, word2: 'TBD'});
+    res.render("play", {word1: word1, 
+    word2: 'TBD', 
+    player_name: GameDataBase.players[GameDataBase.currentPlayer].username});
 
     GameDataBase.players.forEach(element => {
         console.log(element.username);

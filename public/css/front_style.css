@@ -22,7 +22,7 @@
     font-style: italic;
     color: rgb(131, 79, 79);
     top: 33%;
-    left: 11%;
+    left: 10.5%;
     opacity: 0;
 
 }
@@ -35,7 +35,7 @@
     font-style: bold;
     color: rgb(131, 79, 79);
     top: 42%;
-    left: 13%;
+    left: 12%;
     opacity: 0;
 
 }
@@ -44,13 +44,29 @@
 
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 2vw;
+    font-size: 1.7vw;
     font-style: italic;
     color: rgb(131, 79, 79);
-    top: 48%;
-    left: 17%;
+    top: 47%;
+    left: 15%;
+    width: 29%;
     opacity: 0;
 }
+
+#definition-sub-2{
+
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.7vw;
+    font-style: italic;
+    color: rgb(131, 79, 79);
+    top: 58%;
+    left: 14.7%;
+    width: 29%;
+    opacity: 0;
+}
+
+
 
 #name-prompt{
     
@@ -156,7 +172,6 @@ input[type = "text"]{
     position: absolute;
     top: 44%;
     left: 50.2%;
-    opacity: 0;
 }
 
 a:link {
@@ -184,6 +199,12 @@ a:visited {
 #play:hover{
     width: 75px;
     color: rgb(175, 95, 95);
+}
+
+#go-play{
+
+    display: none;
+
 }
 
 #instruction{
