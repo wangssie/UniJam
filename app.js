@@ -17,9 +17,7 @@ app.set("view engine", 'ejs');
 app.get("/", function(req, res){
 
     res.render("front");
-    End.restart();
-    // ensure timer is stopped when game is cleared 
-    timer.stop();
+    End.clearGame();
 
 });
 
