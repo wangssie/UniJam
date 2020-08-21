@@ -37,6 +37,6 @@ module.exports = {
     restart: restart,
 
     gameEnd: gameEnd,
-    clearGame: clearGame;
+    clearGame: clearGame,
 
 };
