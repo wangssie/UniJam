@@ -4,7 +4,9 @@ const WordDataBase = require('./public/scripts/WordDatabase');
 const GameDataBase = require('./public/scripts/GameDatabase');
 const Player = require('./public/scripts/player');
 const End = require('./public/scripts/end');
+const Timer = require('easytimer.js').Timer;
 var app = express();
+var timer = new Timer();
 
 app.use(express.json({limit: '1mb'}));
 
@@ -15,7 +17,9 @@ app.set("view engine", 'ejs');
 app.get("/", function(req, res){
 
     res.render("front");
-    End.clearGame();
+    End.restart();
+    // ensure timer is stopped when game is cleared 
+    timer.stop();
 
 });
 
@@ -28,8 +32,12 @@ app.post("/", function(req, res){
 
 app.get("/play", function(req, res){
 
-    var random_word = WordDataBase.getRandomWord();
-    res.render("play", {word: random_word});
+    var word1; 
+    do {word1= WordDataBase.getRandomWord()} while (GameDataBase.wordsUsed.includes(word1))
+    var word2;
+    do {word2= WordDataBase.getRandomWord()} while (GameDataBase.wordsUsed.includes(word2))
+    
+    res.render("play", {word1: word1, word2: 'TBD'});
 
     GameDataBase.players.forEach(element => {
         console.log(element.username);
