@@ -28,18 +28,21 @@ app.post("/", function(req, res){
 });
 
 app.get("/play", function(req, res){
+    GameDataBase.players = [new Player('user'), new Player('user yay')]
     var word1; 
     do {word1= WordDataBase.getRandomWord()} while (GameDataBase.wordsUsed.includes(word1))
     GameDataBase.currentPlayersList = [word1];
     var word2;
     do {word2= WordDataBase.getRandomWord()} while (GameDataBase.wordsUsed.includes(word2))
     var round = GameDataBase.roundsPlayed + 1;
+    let score = GameDataBase.players[GameDataBase.currentPlayer].score;
     GameDataBase.lastWord = word2;
     res.render("play", {
         word1: word1, 
         word2: word2, 
         player_name: GameDataBase.players[GameDataBase.currentPlayer].username,
-        round: round});
+        round: round,
+        score: score});
 
     GameDataBase.players.forEach(element => {
         console.log(element.username);
@@ -52,7 +55,9 @@ app.post('/play', function(req, res) {
 
     req.body.word_path.push(GameDataBase.lastWord);
     GameDataBase.currentPlayersList = GameDataBase.currentPlayersList.concat(req.body.word_path);
-    console.log(GameDataBase.currentPlayersList);
+    let netScore = req.body.netScore;
+    GameDataBase.players[GameDataBase.currentPlayer].addScore(netScore);
+    console.log("player score: ", GameDataBase.players[GameDataBase.currentPlayer].score)
 })
 
 app.get("/Instructions", function(req, res){

@@ -1,16 +1,19 @@
-var word_path = [" "];
-var allowSubmit = false;
-var timerLimit1 =6;
+//timer constants
+const timerLimit = 16;
+var timerLimit1 = timerLimit;
 var loadingTime =4;
 var breakTime = 4;
+// submit
+var allowSubmit = false;
+// word path
+var word_path = [" "];
 var lastWord = ''
-
-function show_start_word(){
-
-    document.getElementById("start-word").innerHTML = start_word
-    word_path.push(start_word);
-
-}
+var lastWordIndex;
+// section 
+var atSection1 = true;
+// user 
+var playerScore = document.getElementById('score').getAttribute('data-set');
+var penalty=0;
 
 var input = document.getElementById("next-word-input");
 
@@ -28,18 +31,34 @@ function add_to_path(){
 
     if (allowSubmit) {
       let input_word = input.value;
-      console.log(input_word);
       if (word_path[0] == " ") {
         word_path = [];
       }
       word_path.push(input_word);
-
-      document.getElementById("path-container").innerHTML += "<h3 id = 'path-format'>" + input_word + "</h3>";
+      addScore();
+      
+      if (atSection1) {
+        changeSection1Inputs();
+      }
+      else {
+        changeSection2Inputs();
+      }
       console.log(word_path);
-
-      input.value = "";
+      document.getElementById("next-word-input").value = "";
     }
 
+}
+
+function changeSection1Inputs() {
+  document.getElementById('section1-input-1').innerText = (word_path.length-2<=0)?" ":word_path[word_path.length-3];
+  document.getElementById('section1-input-2').innerText = (word_path.length-1<=0)?" ":word_path[word_path.length-2];
+  document.getElementById('section1-input-3').innerText = word_path[word_path.length-1]
+}
+
+function changeSection2Inputs() {
+  document.getElementById('section2-input-1').innerText = (word_path.length-3<=lastWordIndex)?" ":word_path[word_path.length-3];
+  document.getElementById('section2-input-2').innerText = (word_path.length-2<=lastWordIndex)?" ":word_path[word_path.length-2];
+  document.getElementById('section2-input-3').innerText = (word_path.length-1==lastWordIndex)?" ":word_path[word_path.length-1];
 }
 
 // not allow any submissions to the word chain
@@ -68,8 +87,8 @@ function makeVisible() {
   document.getElementById('end-word').style.opacity=1;
   document.getElementById('start').style.opacity=1;
   document.getElementById('start-word').style.opacity=1;
-  document.getElementById('path-container').style.opacity=1;
   document.getElementById('last-word').style.opacity=1;
+  document.getElementById('score').style.opacity=1;
 
   document.getElementById('round-start').style.opacity=0;
   
@@ -109,7 +128,9 @@ function breakMoment() {
   closeSubmit();
   clearInterval(timer);
   timer = setInterval(breakTimerDecrease, 1000);
-  document.getElementById('timer').innerHTML = " "
+  document.getElementById('timer').innerHTML = " ";
+  lastWordIndex = (word_path[0]==" ")?0:word_path.length-1;
+  atSection1 = false;
   var text = (word_path[0]==" ")?"You did not input any words":"Your last word: "+word_path[word_path.length-1];
   document.getElementById("last-word").innerHTML = text;
   var timer_stop = setTimeout(section2, breakTime*1000);
@@ -131,12 +152,17 @@ function section2() {
 
 function timerIncrease() {
     timerLimit1++;
+    if (timerLimit1%2==0) {
+      penalty++;
+      showScore();
+    }
     console.log("timer: ", timerLimit1);
     document.getElementById('timer').innerHTML = ("0"+timerLimit1).slice(-2);
 }
 
 function submitWords() {
-  let data = {word_path}
+  let netScore = playerScore - penalty;
+  let data = {word_path, netScore}
   const options = {
     method: 'POST',
     headers: {
@@ -144,8 +170,18 @@ function submitWords() {
     },
     body: JSON.stringify(data)
   };
+
+
     fetch('/play', options);
 }
 
+function addScore() {
+  playerScore++;
+  showScore();
+}
+
+function showScore() {
+  document.getElementById('score').innerHTML = `score{${playerScore}}-penalty{${penalty}}`;
+}
+
 startLoading();
-console.log()
