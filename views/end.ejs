@@ -23,9 +23,11 @@
     
     <h3 id="loser">It's not supposed to be hard, __.</h3>
         
-    <a style="text-decoration:none" href="/" id = "front">Don't</a>
+    <a href="/"><button id = "front" onclick="play_again(false)">Don't</button></a>
 
-    <button onclick="window.location.href='/play'" id="play" type = "play">Play again</button>
+    <a href="/play"><button id="play" onclick="play_again(true)">Play Again</button></a>
+
+    <script src="scripts/end_page.js"></script>
 
 </body>
 </html>

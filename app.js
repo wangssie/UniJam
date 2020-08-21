@@ -49,6 +49,7 @@ app.get("/play", function(req, res){
 });
 
 app.post('/play', function(req, res) {
+
     req.body.word_path.push(GameDataBase.lastWord);
     GameDataBase.currentPlayersList = GameDataBase.currentPlayersList.concat(req.body.word_path);
     console.log(GameDataBase.currentPlayersList);
@@ -90,6 +91,19 @@ app.post("/check", function(req, res){
 app.get("/end", function(req, res){
 
     res.render("end");
+
+});
+
+app.post("/end", function(req, res){
+
+    if (req.body.play_more == true){
+        console.log("restarting game!!!");
+        End.restart();
+    }
+    else{
+        console.log("resetting game!!!");
+        End.clearGame();
+    }
 
 });
 
