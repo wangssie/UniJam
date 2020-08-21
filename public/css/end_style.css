@@ -1,0 +1,116 @@
+#game{
+    font-family: monospace;
+    font-size: 20px;
+    color: rgb(131, 79, 79);
+    opacity: 0;
+}
+
+#end-title{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4vw;
+    color: rgb(131, 79, 79);
+    top: 8%;
+    left: 40%;
+
+}
+
+#player1-score{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2vw;
+    font-style: italic;
+    color: rgb(131, 79, 79);
+    top: 21%;
+    left: 14%;
+}
+
+#player2-score{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2vw;
+    font-style: italic;
+    color: rgb(131, 79, 79);
+    top: 21%;
+    left: 74%;
+}
+
+#score1-int{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2vw;
+    font-style: bold;
+    color: rgb(131, 79, 79);
+    top: 25%;
+    left: 14%;
+}
+
+#score2-int{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2vw;
+    font-style: bold;
+    color: rgb(131, 79, 79);
+    top: 25%;
+    left: 74%;
+}
+
+#winner{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2vw;
+    font-style: bold;
+    color: rgb(131, 79, 79);
+    top: 50%;
+    left: 42%;
+}
+
+#loser{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1vw;
+    font-style: bold;
+    color: rgb(131, 79, 79);
+    top: 56%;
+    left: 42%;
+}
+
+body{
+    background-color: rgb(255, 245, 230);
+}
+
+
+@keyframes increase {
+    100% {
+        height: 75%;
+    }
+}
+
+a:link {
+    color: rgb(131, 79, 79) }
+
+a:visited {
+    color: rgb(131, 79, 79) }
+
+#play{
+    font-family: "Lucida Console";
+    color: rgb(131, 79, 79) ;
+    text-align: left;
+    font-size: 1.5vw;
+    position: absolute;
+    top: 73%;
+    left: 60%;
+    transition: width 1s;
+    background: rgb(255, 245, 230);
+    border:none;
+}
+
+#front{
+    font-family: "Lucida Console";
+    color: rgb(131, 79, 79) ;
+    text-align: left;
+    font-size: 1.5vw;
+    position: absolute;
+    top: 73%;
+    left: 38%;
+}
