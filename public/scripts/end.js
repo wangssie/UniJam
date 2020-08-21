@@ -22,7 +22,9 @@ function restart() {
         //*** HTML to play.js page
 }
 
-gameEnd();
+module.exports = {
+    restart: restart,
 
-// debugs
-restart();
+    gameEnd: gameEnd,
+
+};
