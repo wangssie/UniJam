@@ -3,10 +3,9 @@ var path = require('path');
 const WordDataBase = require('./public/scripts/WordDatabase');
 const GameDataBase = require('./public/scripts/GameDatabase');
 const Player = require('./public/scripts/player');
+const Check = require('./public/scripts/check');
 const End = require('./public/scripts/end');
-const Timer = require('easytimer.js').Timer;
 var app = express();
-var timer = new Timer();
 
 app.use(express.json({limit: '1mb'}));
 
@@ -64,7 +63,34 @@ app.get("/Instructions", function(req, res){
 
 app.get("/check", function(req, res){
 
-    res.render("check", { root: __dirname});
+    let cont_href;
+
+    if (GameDataBase.currentPlayer == 0){
+        cont_href = "play";
+    }
+    else{
+        cont_href = "end";
+    }
+
+    res.render("check", {words: GameDataBase.currentPlayersList,
+    player_name: GameDataBase.players[GameDataBase.currentPlayer].username,
+    score: 5,
+    continue_path: cont_href});
+
+    Check.nextRound();
+
+});
+
+app.post("/check", function(req, res){
+
+    GameDataBase.players[GameDataBase.currentPlayer].setScore(req.body.score);
+    console.log(GameDataBase.players[GameDataBase.currentPlayer].score);
+
+});
+
+app.get("/end", function(req, res){
+
+    res.render("end");
 
 });
 

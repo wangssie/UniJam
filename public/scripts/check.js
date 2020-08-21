@@ -25,12 +25,8 @@ function nextRound() {
     // *** EVOKE NEXT PLAY HTML
 }
 
+module.exports = {
 
-checkRound();
+    nextRound: nextRound,
 
-//debugging
-/*
-GameDatabase.players = [new Player('swag')]
-nextRound();
-invalidWord();
-*/
+}
