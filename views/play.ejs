@@ -7,16 +7,18 @@
 <body>
     
     <h1 id = "game"><a href="/">konek.io</a></h1>
-
     <h2 id = "round-count">Round: <%= round %></h2>
+    <h2 id = "player-name">Player: <%= player_name %> </h2>
 
     <h1 id = "timer"></h1>
 
-    <h2 id = "player-name">Player: <%= player_name %> </h2>
     
-    <h1 id = "btm-title">wəːdsmɪθ;</h1>
+    <h1 id = "btm-title">Ko  •  Nek</h1>
 
     <div class="line"></div>
+
+    <div class="rectangle" id = 'rect-1'></div>
+    <div class="rectangle" id = 'rect-2'></div>
 
     <div class="start-box">
         <h1 id="start">Start</h1>
@@ -27,9 +29,7 @@
     <div class="end-box">
         <h1 id="end">End</h1>
         <h2 id="end-word"><%= word2 %></h2>
-
     </div>
-
     
     <h3 id = "path-text">Your path so far: </h3>
     
@@ -40,7 +40,8 @@
     <input id="next-word-input" type="text">
     <input id="submit" type="text" onclick="add_to_path()">
 
-    <h1 id ="round-start">Round  begins in </h1>
+    <h1 id ="round-start">Round begins in </h1>
+    <h1 id ="last-word"></h1>
  
     <a href="check"><button id = "next-button" onclick="submitWords()">Submit</button></a>
 

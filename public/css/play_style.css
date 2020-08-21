@@ -1,7 +1,14 @@
 #game{
     font-family: monospace;
-    font-size: 20px;
     color: rgb(131, 79, 79);
+    opacity: 0;
+    position: absolute;
+    top: 0.5%;
+    left: 1%;
+    font-style: bold;
+    font-size: 1.4vw;
+    text-align: left;
+    display: inline;
 }
 
 a{
@@ -11,11 +18,23 @@ a{
 
 .line{
     position: absolute;
+    top: 30%;
+    left: 48.5%;
+    border-left: 5px solid rgb(131, 79, 79);
+    height: 0px;
+    animation: increase 2s;
+    animation-delay: 4s; 
+    animation-fill-mode: forwards;
+}
+
+.rectangle{
+    position: absolute;
     top: 25%;
     left: 48.5%;
     border-left: 5px solid rgb(131, 79, 79);
     height: 0px;
-    animation: increase 2s; 
+    animation: increase 2s;
+    animation-delay: 4s; 
     animation-fill-mode: forwards;
 }
 
@@ -32,23 +51,40 @@ body{
 #btm-title{
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 4.5vw;
-    font-style: italic;
+    font-size: 4.2vw;
     color: rgb(131, 79, 79);
-    top: 7%;
-    left: 40%;
+    font-style: italics;
+    top: 9%;
+    left: 41.4%;
+    opacity: 0;
 
 }
-
 #round-count{
-
     position: absolute;
-    bottom: 91%;
-    left: 20%;
+    top: 0%;
     color: rgb(131, 79, 79);
     font-family: monospace;
-    font-style: oblique;
-    font-size: 1.7vw;
+    font-style: bold;
+    font-size: 1.4vw;
+    display: inline;
+
+    text-align : left;
+    opacity: 0;
+    left: 45.5%;
+}
+
+#player-name{
+    position: absolute;
+    top: 0%;
+    color: rgb(131, 79, 79);
+    font-family: monospace;
+    font-style: bold;
+    font-size: 1.4vw;
+    display: inline;
+
+    text-align: right;
+    opacity: 0;
+    right: 2%;
 
 }
 
@@ -56,55 +92,44 @@ body{
 
     position: absolute;
     color: rgb(131, 79, 79);
-    bottom: 88%;
-    left: 46%;
+    bottom: 80%;
+    left: 46.8%;
     font-family: 'Times New Roman', Times, serif;
     font-style: bold;
-    font-size: 5vw;
-
+    font-size: 4vw;
+    opacity: 0;
 }
 
-#player-name{
-    
-    position: absolute;
-    bottom: 92%;
-    left: 70%;
-    color: rgb(131, 79, 79);
-    text-align: right;
-    font-family: monospace;
-    font-style: bold;
-    font-size: 1.4vw;
-    width: 29%;
 
-}
 
 .start-box{
     color: rgb(131, 79, 79);
     position: absolute;
     left: 5%;
-    bottom: 60%;
-
+    bottom: 55%;
+    
 }
 
 #start{
     font-style: italic;
     font-size: 2.4vw;   
+    opacity: 0;
 }
 
 #start-word{
     position: relative;
     bottom: 8%;
     font-size: 2.7vw;
-    opacity: 1;
-
+    opacity: 0;
 }
 
 .end-box{  
     color: rgb(131, 79, 79);
     position: absolute;
-    bottom: 60%;
+    bottom: 55%;
     left: 65%;
     width: 30%;
+    
 
 }
 
@@ -112,13 +137,21 @@ body{
     text-align: right;
     font-style: italic;
     font-size: 2.4vw;
+    opacity: 0
 }
 
 #end-word{
     text-align: right;
     bottom: 8%;
     font-size: 2.7vw;
-    opacity: 1;
+    opacity: 0
+}
+
+#end-word-filler{
+    text-align: right;
+    bottom: 8%;
+    font-size: 2.7vw;
+    opacity: 0
 }
 
 #path-text{
@@ -127,7 +160,7 @@ body{
     left: 5%;
     color: rgb(131, 79, 79); 
     font-size: 1.3vw;
-
+    opacity: 0;
 }
 
 #path-container{
@@ -135,7 +168,7 @@ body{
     position: absolute;
     top: 45.1%;
     left: 16%;
-
+    opacity: 0;
 }
 
 #path-format{
@@ -152,17 +185,19 @@ body{
     left: 40%;
     font-size: 2.7vw;
     color: rgb(131, 79, 79);
+    opacity: 0;
 }
 
 #next-word-input{
     position: absolute;
     top: 67%;
-    left: 37%;
+    left: 38%;
     border: solid 2px rgb(131, 79, 79);
     color: rgb(131, 79, 79);
     font-family: monospace;
     text-align: center;
     font-size: 2vw;
+    opacity: 0;
 }
 
 #submit{
@@ -180,6 +215,7 @@ body{
     color: rgb(131, 79, 79);
     background-color: rgb(255, 245, 230);
     border: none;
+    opacity: 0;
 
 }
 
@@ -188,4 +224,29 @@ body{
     background-color: rgb(131, 79, 79);
     transition: all 0.2s ease-in;
     color: rgb(255, 245, 230);
+}
+
+#round-start{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4.5vw;
+    font-style: italic;
+    color: rgb(131, 79, 79);
+    text-align: center;
+    top: 41%;
+    left: 45.8%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+#last-word{
+    position: absolute;
+    top: 8%;
+    left: 49%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    color: rgb(131, 79, 79);
 }

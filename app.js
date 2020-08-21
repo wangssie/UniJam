@@ -29,7 +29,6 @@ app.post("/", function(req, res){
 });
 
 app.get("/play", function(req, res){
-
     var word1; 
     do {word1= WordDataBase.getRandomWord()} while (GameDataBase.wordsUsed.includes(word1))
     GameDataBase.currentPlayersList = [word1];
