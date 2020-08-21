@@ -37,13 +37,14 @@ function cancel_word(){
     
     let name = document.getElementById("input-prompt").value;
     let score = document.getElementById("show-score").innerText.trim().split(" ");
+    let relevant = word_link_arr.slice(1, word_link_arr.length-1); // create an array that does not include first and last word
+    relevant = relevant.map((e)=>e.toLowerCase()); // make all the elements to lower case
+    console.log("relevant array", relevant);
 
-    console.log(word_link_arr);
-
-    if (word_link_arr.includes(name)){
+    if (word_link_arr.includes(name.toLowerCase())){ // check if lower case input matches anythign in relevant array
         document.getElementById("caution").innerHTML = "";
         cancel_out_word(name);
-        let index = word_link_arr.indexOf(name);
+        let index = relevant.indexOf(name.toLowerCase)+1; // index in relevant is always shifted to the left by 1
         word_link_arr.splice(index, 1);
 
         if (score[1] > 0){
