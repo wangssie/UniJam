@@ -1,5 +1,6 @@
 var joined_list = [];
 var num_players = 0;
+const maxPlayers = 2; // hard coded, not good, please change 
 var input = document.getElementById("input-box");
 
 input.addEventListener("keyup", function(event) {
@@ -7,8 +8,14 @@ input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     
     event.preventDefault();
-    
-    document.getElementById("submit").click();
+    // submit input of username ONLY if maxPlayers hasn't been reached
+    if (joined_list.length < maxPlayers) {
+        document.getElementById("submit").click();
+    }
+    else {
+        // show error message 
+        console.log("NO MORE PLAYERS PLEASE")
+    }
   }
 });
 
