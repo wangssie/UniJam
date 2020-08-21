@@ -64,11 +64,11 @@ app.get("/check", function(req, res){
 
     let cont_href;
 
-    if (GameDataBase.currentPlayer == 0){
-        cont_href = "play";
+    if (GameDataBase.roundsPlayed == GameDataBase.roundTotal - 1 && GameDataBase.currentPlayer == 1){
+        cont_href = "end";
     }
     else{
-        cont_href = "end";
+        cont_href = "play";
     }
 
     res.render("check", {words: GameDataBase.currentPlayersList,
