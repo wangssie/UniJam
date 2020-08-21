@@ -162,7 +162,7 @@ function timerIncrease() {
 }
 
 function submitWords() {
-  let netScore = playerScore - penalty;
+  let netScore = Number(playerScore) - Number(penalty);
   let data = {word_path, netScore}
   const options = {
     method: 'POST',
