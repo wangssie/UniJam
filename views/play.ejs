@@ -39,35 +39,13 @@
     <h1 id="next">Your Next Word:</h1>
     <input id="next-word-input" type="text">
     <input id="submit" type="text" onclick="add_to_path()">
+
+    <h1 id ="round-start">Round  begins in </h1>
  
     <a href="check"><button id = "next-button" onclick="">Submit</button></a>
 
     <script src = "scripts/play_page.js"></script>
-    <script>
 
-        var timerLimit1 = 15;
-        var timer = setInterval(timerDecrease, 1000);
-    
-        function timerDecrease() {
-            timerLimit1--;
-            document.getElementById('timer').innerHTML = ("0"+timerLimit1).slice(-2);
-        }
-        var timer_stop = setTimeout(cancelTimer, timerLimit1*1000);
-        function cancelTimer() {
-            clearInterval(timer);
-
-            setTimeout(section2, 5000)
-        }
-        
-        function section2() {
-            timer = setInterval(timerIncrease, 1000) 
-        }
-        function timerIncrease() {
-            timerLimit1++;
-            document.getElementById('timer').innerHTML = ("0"+timerLimit1).slice(-2);
-        }
-
-    </script>
 
 </body>
 </html>
