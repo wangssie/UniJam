@@ -152,7 +152,7 @@ function section2() {
 
 function timerIncrease() {
     timerLimit1++;
-    if (timerLimit1%2==0) {
+    if (timerLimit1%2==0 && penalty<timerLimit-1) {
       penalty++;
       showScore();
     }
