@@ -14,10 +14,21 @@ input.addEventListener("keyup", function(event) {
     }
     else {
         // show error message 
-        document.getElementById("error-message").style.opacity=1;
+        document.getElementById("error-message").innerHTML = "Maximum players reached!";
     }
   }
 });
+
+function check_play(){
+
+    if (joined_list.length == 2){
+        document.getElementById("go-play").click();
+    }
+    else{
+        document.getElementById("error-message").innerHTML = "You need 2 players to start the game!";
+    }
+
+}
 
 function player_input(){
 
@@ -58,6 +69,7 @@ var opacity_sub = 0;
 var opacity_game = 0;
 var opacity_def = 0;
 var opacity_subdef = 0;
+var opacity_subdef2 = 0;
 var opacity_instruction = 0;
 var opacity_joined = 0;
 var opacity_play = 0;
@@ -78,6 +90,7 @@ function fade_in(){
     var game = document.getElementById("game");
     var definition = document.getElementById("definition");
     var definition_sub = document.getElementById("definition-sub");
+    var definition_sub2 = document.getElementById("definition-sub-2");
     var instruction = document.getElementById("instruction");
     var joined = document.getElementById("joined");
     var play = document.getElementById("play");
@@ -89,6 +102,7 @@ function fade_in(){
     opacity_game = Number(window.getComputedStyle(game).getPropertyValue("opacity"));
     opacity_def = Number(window.getComputedStyle(definition).getPropertyValue("opacity"));
     opacity_subdef = Number(window.getComputedStyle(definition_sub).getPropertyValue("opacity"));
+    opacity_subdef2 = Number(window.getComputedStyle(definition_sub2).getPropertyValue("opacity"));
     opacity_instruction = Number(window.getComputedStyle(instruction).getPropertyValue("opacity"));
     opacity_joined = Number(window.getComputedStyle(joined).getPropertyValue("opacity"));
     opacity_play = Number(window.getComputedStyle(play).getPropertyValue("opacity"));
@@ -103,6 +117,7 @@ function fade_in(){
         opacity_game += 0.02;
         opacity_def += 0.02;
         opacity_subdef += 0.02;
+        opacity_subdef2 += 0.02;
         opacity_instruction += 0.02;
         opacity_joined += 0.02;
         opacity_play += 0.02;
@@ -113,6 +128,7 @@ function fade_in(){
         game.style.opacity = opacity_game;
         definition.style.opacity = opacity_def;
         definition_sub.style.opacity = opacity_subdef;
+        definition_sub2.style.opacity = opacity_subdef2;
         instruction.style.opacity = opacity_instruction;
         joined.style.opacity = opacity_joined;
         play.style.opacity = opacity_play;
