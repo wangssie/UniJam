@@ -14,7 +14,7 @@ input.addEventListener("keyup", function(event) {
     }
     else {
         // show error message 
-        console.log("NO MORE PLAYERS PLEASE")
+        document.getElementById("error-message").style.opacity=1;
     }
   }
 });

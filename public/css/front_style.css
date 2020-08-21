@@ -148,6 +148,17 @@ input[type = "text"]{
     top: 51%;
 }
 
+#error-message{
+    font-family: "Lucida Console";
+    color: rgb(131, 79, 79);
+    text-align: left;
+    font-size: 1.6vw;
+    position: absolute;
+    top: 44%;
+    left: 50.2%;
+    opacity: 0;
+}
+
 a:link {
     color: rgb(131, 79, 79) }
 
@@ -183,7 +194,6 @@ a:visited {
     position: absolute;
     top: 5%;
     left: 87%;
-    
     opacity: 0;
 }
 
@@ -193,3 +203,4 @@ a:visited {
     color: lightgrey;
 
 }
+
