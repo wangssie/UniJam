@@ -9,8 +9,6 @@ function show_start_word(){
 
 }
 
-show_start_word();
-
 var input = document.getElementById("next-word-input");
 
 input.addEventListener("keyup", function(event) {
