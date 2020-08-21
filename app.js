@@ -94,10 +94,23 @@ app.post("/check", function(req, res){
 
 app.get("/end", function(req, res){
 
+    let player_winner;
+
+    if (GameDataBase.players[0].score > GameDataBase.players[1].score){
+        player_winner = GameDataBase.players[0].username;
+    }
+    else if (GameDataBase.players[0].score < GameDataBase.players[1].score){
+        player_winner = GameDataBase.players[1].username;
+    }
+    else{
+        player_winner = "Nobody";
+    }
+
     res.render("end", {player1_score: GameDataBase.players[0].score,
     player2_score: GameDataBase.players[1].score,
     player1_name: GameDataBase.players[0].username,
-    player2_name: GameDataBase.players[1].username});
+    player2_name: GameDataBase.players[1].username,
+    winner: player_winner});
 
 });
 
