@@ -51,6 +51,7 @@ app.get("/play", function(req, res){
 });
 
 app.post('/play', function(req, res) {
+
     req.body.word_path.push(GameDataBase.lastWord);
     GameDataBase.currentPlayersList = GameDataBase.currentPlayersList.concat(req.body.word_path);
     let netScore = req.body.netScore;
@@ -77,7 +78,7 @@ app.get("/check", function(req, res){
 
     res.render("check", {words: GameDataBase.currentPlayersList,
     player_name: GameDataBase.players[GameDataBase.currentPlayer].username,
-    score: 5,
+    score: GameDataBase.players[GameDataBase.currentPlayer].score,
     continue_path: cont_href});
 
     Check.nextRound();
@@ -93,7 +94,23 @@ app.post("/check", function(req, res){
 
 app.get("/end", function(req, res){
 
-    res.render("end");
+    res.render("end", {player1_score: GameDataBase.players[0].score,
+    player2_score: GameDataBase.players[1].score,
+    player1_name: GameDataBase.players[0].username,
+    player2_name: GameDataBase.players[1].username});
+
+});
+
+app.post("/end", function(req, res){
+
+    if (req.body.play_more == true){
+        console.log("restarting game!!!");
+        End.restart();
+    }
+    else{
+        console.log("resetting game!!!");
+        End.clearGame();
+    }
 
 });
 

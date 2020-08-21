@@ -11,21 +11,23 @@
     <h1 id = "game"><a href="/">konek.io</a></h1>
     <h1 id = "end-title">You're done.</h1>
 
-    <h2 id = "player1-score">Player 1 Score:</h2>
+    <h2 id = "player1-score"><%= player1_name%>  Score:</h2>
 
-    <h2 id = "score1-int">12345</h2>
+    <h2 id = "score1-int"><%= player1_score %> </h2>
 
-    <h2 id = "player2-score">Player 2 Score:</h2>
+    <h2 id = "player2-score"><%= player2_name %>  Score:</h2>
 
-    <h2 id = "score2-int">54321</h2>
+    <h2 id = "score2-int"><%= player2_score %> </h2>
 
     <h2 id = "winner">__ wins. Amazing.</h2>
     
     <h3 id="loser">It's not supposed to be hard, __.</h3>
         
-    <a style="text-decoration:none" href="/" id = "front">Don't</a>
+    <a href="/"><button id = "front" onclick="play_again(false)">Don't</button></a>
 
-    <button onclick="window.location.href='/play'" id="play" type = "play">Play again</button>
+    <a href="/play"><button id="play" onclick="play_again(true)">Play Again</button></a>
+
+    <script src="scripts/end_page.js"></script>
 
 </body>
 </html>

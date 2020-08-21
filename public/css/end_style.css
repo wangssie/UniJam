@@ -94,22 +94,37 @@ a:visited {
 #play{
     font-family: "Lucida Console";
     color: rgb(131, 79, 79) ;
-    text-align: left;
+    text-decoration: none;
     font-size: 1.5vw;
     position: absolute;
     top: 73%;
     left: 60%;
-    transition: width 1s;
+    border: none;
     background: rgb(255, 245, 230);
-    border:none;
+
+}
+
+#play:hover{
+    color: rgb(255, 245, 230);
+    background-color: rgb(131, 79, 79);
+    transition: all 0.2 ease-in;
+
 }
 
 #front{
     font-family: "Lucida Console";
-    color: rgb(131, 79, 79) ;
+    color: rgb(131, 79, 79);
+    background: rgb(255, 245, 230);
+    border: none;
     text-align: left;
     font-size: 1.5vw;
     position: absolute;
     top: 73%;
     left: 38%;
+}
+
+#front:hover{
+    color: rgb(255, 245, 230);
+    background-color: rgb(131, 79, 79);
+    transition: all 0.2 ease-in;
 }
