@@ -10,7 +10,7 @@
 
     <h2 id = "round-count">Round: 1</h2>
 
-    <h1 id = "timer">00:00</h1>
+    <h1 id = "timer"></h1>
 
     <h2 id = "player-name">Player: <%= player_name %> </h2>
     
@@ -43,6 +43,31 @@
     <a href="check"><button id = "next-button" onclick="">Submit</button></a>
 
     <script src = "scripts/play_page.js"></script>
+    <script>
+
+        var timerLimit1 = 15;
+        var timer = setInterval(timerDecrease, 1000);
+    
+        function timerDecrease() {
+            timerLimit1--;
+            document.getElementById('timer').innerHTML = ("0"+timerLimit1).slice(-2);
+        }
+        var timer_stop = setTimeout(cancelTimer, timerLimit1*1000);
+        function cancelTimer() {
+            clearInterval(timer);
+
+            setTimeout(section2, 5000)
+        }
+        
+        function section2() {
+            timer = setInterval(timerIncrease, 1000) 
+        }
+        function timerIncrease() {
+            timerLimit1++;
+            document.getElementById('timer').innerHTML = ("0"+timerLimit1).slice(-2);
+        }
+
+    </script>
 
 </body>
 </html>
