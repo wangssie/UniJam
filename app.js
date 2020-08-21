@@ -1,17 +1,35 @@
 var express = require('express');
 var path = require('path');
 var app = express();
-var router = express.Router();
 
 app.use(express.static("public"));
 
-router.get("/", function(request, response){
+app.set("view engine", 'ejs');
 
-    response.sendFile("/public/front.html", { root: __dirname});
+
+app.get("/", function(req, res){
+
+    res.render("front", { root: __dirname});
 
 });
 
-app.use('/', router);
+app.get("/play", function(req, res){
+
+    res.render("play", { root: __dirname});
+
+});
+
+app.get("/Instructions", function(req, res){
+
+    res.render("Instructions", { root: __dirname});
+
+});
+
+app.get("/check", function(req, res){
+
+    res.render("check", { root: __dirname});
+
+});
 
 app.listen(3000, function(){
     console.log("listening...");
