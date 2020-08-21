@@ -95,6 +95,7 @@ body{
     position: relative;
     bottom: 8%;
     font-size: 2.7vw;
+    opacity: 0;
 
 }
 
@@ -117,7 +118,7 @@ body{
     text-align: right;
     bottom: 8%;
     font-size: 2.7vw;
-
+    opacity: 0;
 }
 
 #path-text{
