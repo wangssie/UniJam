@@ -15,20 +15,28 @@ input.addEventListener("keyup", function(event) {
 function player_input(){
 
     var input = document.getElementById("input-box").value;
-
     joined_list.push(input);
 
     document.getElementById("joined-list").innerHTML += "<li id = 'players'>"+ input + "</li>";
-
     document.getElementById("input-box").value = "";
 
     console.log("Player name: " + input);
-
     num_players++;
-    
     update_player_count();
     
     console.log(joined_list);
+    
+    let data = {joined_list};
+    const options = {
+        method: 'POST',
+        headers: {
+            "Content-type": 'application/json'
+        },
+        body: JSON.stringify(data)
+
+    };
+
+    fetch('/', options);
     
 }
 

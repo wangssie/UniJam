@@ -108,6 +108,10 @@ input[type = "text"]{
     font-size: 1.5vw;
 }
 
+#submit{
+     display: none;
+}
+
 #joined{
     font-family: "Lucida Console";
     color: rgb(131, 79, 79);
