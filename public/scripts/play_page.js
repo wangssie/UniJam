@@ -1,5 +1,5 @@
 //timer constants
-const timerLimit = 16;
+const timerLimit = 5;
 var timerLimit1 = timerLimit;
 var loadingTime =4;
 var breakTime = 4;
