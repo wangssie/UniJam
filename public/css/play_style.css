@@ -16,6 +16,48 @@ a{
 
 }
 
+.section1-group{
+    position: absolute;
+    top: 46%;
+    left: 16%;
+    display: table;
+    width: 30%;
+    height: 10%;
+    color: rgb(131, 79, 79); 
+    font-size: 1.3vw;
+    table-layout: fixed;
+    word-wrap: break-word;
+
+
+}
+
+.section1-inputs{
+    display: table-cell;
+    text-align: center;
+    padding: 3%;
+}
+
+.section2-group{
+    position: absolute;
+    top: 46%;
+    right: 16%;
+    display: table;
+    width: 30%;
+    height: 10%;
+    color: rgb(131, 79, 79); 
+    font-size: 1.3vw;
+    table-layout: fixed;
+    word-wrap: break-word;
+
+
+}
+
+.section2-inputs{
+    display: table-cell;
+    text-align: center;
+    padding: 3%;
+}
+
 .line{
     position: absolute;
     top: 30%;
@@ -85,8 +127,22 @@ body{
     text-align: right;
     opacity: 0;
     right: 2%;
-
 }
+
+#score {
+    position: absolute;
+    top: 4%;
+    color: rgb(131, 79, 79);
+    font-family: monospace;
+    font-style: bold;
+    font-size: 2vw;
+    display: inline;
+
+    text-align: right;
+    opacity: 0;
+    right: 2%;
+}
+
 
 #timer{
 
@@ -163,21 +219,6 @@ body{
     opacity: 0;
 }
 
-#path-container{
-
-    position: absolute;
-    top: 45.1%;
-    left: 16%;
-    opacity: 0;
-}
-
-#path-format{
-    position: relative;
-    font-size: 1.3vw;
-    font-family: 'Times New Roman', Times, serif;
-    color: rgb(131, 79, 79); 
-
-}
 
 #next{
     position: absolute;
@@ -250,3 +291,4 @@ body{
     opacity: 0;
     color: rgb(131, 79, 79);
 }
+
