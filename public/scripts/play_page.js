@@ -1,5 +1,5 @@
 //timer constants
-const timerLimit = 16;
+const timerLimit = 5;
 var timerLimit1 = timerLimit;
 var loadingTime =4;
 var breakTime = 4;
@@ -91,6 +91,7 @@ function makeVisible() {
   document.getElementById('score').style.opacity=1;
 
   document.getElementById('round-start').style.opacity=0;
+  document.getElementById('playing-start').style.opacity=0;
   
 }
 var timer;
@@ -161,7 +162,7 @@ function timerIncrease() {
 }
 
 function submitWords() {
-  let netScore = playerScore - penalty;
+  let netScore = Number(playerScore) - Number(penalty);
   let data = {word_path, netScore}
   const options = {
     method: 'POST',
