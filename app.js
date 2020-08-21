@@ -44,13 +44,6 @@ app.get("/play", function(req, res){
 
     });
 
-    // create timer for section1
-    timer = new Timer();
-    //GameDataBase.section1Timelimit+1
-    timer.start({startValues: [0,4,0,0,0], target: [0,0,0,0,0], 
-        countdown : true, callback: (t)=>console.log(t.getTotalTimeValues()['seconds'])})
-    timer.addEventListener('stopped', (t)=>res.render("play",{word1: word1, word2: word2} ))
-
 });
 
 app.get("/Instructions", function(req, res){
