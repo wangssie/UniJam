@@ -91,6 +91,7 @@ function makeVisible() {
   document.getElementById('score').style.opacity=1;
 
   document.getElementById('round-start').style.opacity=0;
+  document.getElementById('playing-start').style.opacity=0;
   
 }
 var timer;

@@ -65,7 +65,7 @@ a{
     border-left: 5px solid rgb(131, 79, 79);
     height: 0px;
     animation: increase 2s;
-    animation-delay: 4s; 
+    animation-delay: 5s; 
     animation-fill-mode: forwards;
 }
 
@@ -275,6 +275,19 @@ body{
     color: rgb(131, 79, 79);
     text-align: center;
     top: 41%;
+    left: 49.8%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+#playing-start{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3.5vw;
+    color: rgb(131, 79, 79);
+    text-align: center;
+    top: 25%;
     left: 49.8%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
