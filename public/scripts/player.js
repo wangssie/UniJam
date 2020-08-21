@@ -14,6 +14,10 @@ class Player {
         return this.username;
     }
 
+    setScore(score){
+        this.score = score;
+    }
+
     addScore(score=1) {
         this.score+=score;
     }

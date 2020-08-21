@@ -8,11 +8,19 @@
 </head>
 <body>
     
-    <h1 id = "game"><a href="/">konek.io</a></h1>
+    <h1 id = "game"><a href="/" style="color: rgb(131, 79, 79)">konek.io</a></h1>
 
+    <h2 id = "player-name">Player: <%= player_name %> </h2>
+    
     <h1 id = "list-title">Word Link</h1>
 
-    <ul id = "word-list"></ul>
+    <ul id = "word-list">
+        <% words.forEach((word) =>{ %>
+            <li id = "<%= word%>"> <%= word %> </li>
+
+        <% }); %> 
+
+    </ul>
 
     <div class="line"></div>
 
@@ -23,6 +31,10 @@
         <input id = "submit" onclick="cancel_word()"></input>
 
     </div>
+
+    <h2 id = "show-score">Score: <%= score%></h2>
+
+    <a href="<%= continue_path%> " id = "continue-end" onclick="submit_score()">Continue</a>
 
     <h1 id = "caution"></h1>
 
