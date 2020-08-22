@@ -1,4 +1,5 @@
 var express = require('express');
+var PORT = process.env.PORT || 3000;
 var path = require('path');
 const WordDataBase = require('./public/scripts/WordDatabase');
 const GameDataBase = require('./public/scripts/GameDatabase');
@@ -129,7 +130,7 @@ app.post("/end", function(req, res){
 
 });
 
-app.listen(3000, function(){
+app.listen(PORT, function(){
     console.log("listening...");
 
 });
