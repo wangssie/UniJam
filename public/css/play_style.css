@@ -278,7 +278,8 @@ body{
     position: absolute;
     top: 67%;
     left: 38%;
-    border: solid 2px rgb(131, 79, 79);
+    border: solid 2px white;
+    outline: none;
     color: rgb(131, 79, 79);
     font-family: monospace;
     text-align: center;
