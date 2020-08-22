@@ -18,7 +18,7 @@
 
     <ul id = "word-list">
         <% words.forEach((word) =>{ %>
-            <li id = "<%= word%>"> <%= word %> </li>
+            <li id = "<%= word.toLowerCase().trim()%>"> <%= word %> </li>
 
         <% }); %> 
 

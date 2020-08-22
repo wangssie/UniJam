@@ -42,7 +42,7 @@ function cancel_word(){
 
     if (word_link_arr.includes(name.toLowerCase())){ // check if lower case input matches anythign in relevant array
         document.getElementById("caution").innerHTML = "";
-        cancel_out_word(name);
+        cancel_out_word(name.toLowerCase().trim());
         let index = word_link_arr.indexOf(name.toLowerCase());
         console.log("index to cancel",index);
         word_link_arr.splice(index, 1);
