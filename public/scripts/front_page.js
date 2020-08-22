@@ -11,9 +11,14 @@ input.addEventListener("keyup", function(event) {
     // max players reached
     if (joined_list.length >= maxPlayers) {
         // show error message 
-        document.getElementById("error-message").innerHTML = "Maximum players reached!";
+        document.getElementById("error-message").innerHTML = "Maximum players reached";
     }
-    else if (input === "") {}
+    else if (input.trim() === "") {
+        document.getElementById("error-message").innerHTML = 'Please input a valid name';
+    }
+    else if (joined_list.includes(input)) {
+        document.getElementById("error-message").innerHTML = 'Username already in use';
+    }
     else {
         document.getElementById("submit").click();
     }
