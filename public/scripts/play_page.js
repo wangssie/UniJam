@@ -81,7 +81,6 @@ function makeVisible() {
   document.getElementById('btm-title').style.opacity=1;
   document.getElementById('path-text').style.opacity=1;
   document.getElementById('next').style.opacity=1;
-  document.getElementById('next-button').style.opacity=1;
   document.getElementById('next-word-input').style.opacity=1;
   document.getElementById('end').style.opacity=1;
   document.getElementById('end-word').style.opacity=1;
@@ -144,6 +143,7 @@ function breakTimerDecrease() {
 function section2() {
     openSubmit();
     clearInterval(timer);
+    document.getElementById('next-button').style.opacity=1;
     document.getElementById('end-word').innerText = lastWord;
     document.getElementById("last-word").style.opacity = 0;
     document.getElementById("end-word").style.opacity = 1;
