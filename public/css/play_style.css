@@ -311,6 +311,7 @@ body{
     background-color: rgb(131, 79, 79);
     transition: all 0.2s ease-in;
     color: rgb(255, 245, 230);
+    outline: none;
 }
 
 #round-start{

@@ -138,10 +138,11 @@ input[type = "text"]{
 
     position: absolute;
     top: 46%;
-    left: 54.5%;
+    left: 49.5%;
     font-family: monospace;
     font-size: 2.5vw;
     color: rgb(131, 79, 79);
+    text-align: center;
 
 }
 
