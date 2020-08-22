@@ -40,18 +40,19 @@ function add_to_path(){
         word_path.push(input_word);
         addScore();  
         document.getElementById("caution-same").innerText = "";  
+
+        if (atSection1) {
+          changeSection1Inputs();
+        }
+        else {
+          
+          changeSection2Inputs();
+        }
       }
       else{
         document.getElementById("caution-same").innerText = "Can't enter existing word!";     
       }
-      
-      if (atSection1) {
-        changeSection1Inputs();
-      }
-      else {
-        
-        changeSection2Inputs();
-      }
+    
       document.getElementById("next-word-input").value = "";
     }
 
