@@ -6,9 +6,9 @@ var breakTime = 4;  // length of break before section 2 starts
 // submit
 var allowSubmit = false; // allow player to submit word 
 // word path
-var word_path = [" "];  // the players word chain
+var word_path = [];  // the players word chain
 var endWord = '' // the end word for section 2
-var lastWordIndex; // the index of the last word submitted in section 1
+var lastWordIndex=-1; // the index of the last word submitted in section 1
 // section 
 var atSection1 = true; // if user is current playing section 1 or section 2
 // user 
@@ -36,15 +36,13 @@ function add_to_path(){
   // if submission is allowed
     if (allowSubmit) {
       let input_word = input.value;
-      if (word_path[0] == " ") {
-        word_path = [];
-      }
 
       if (!word_path.map((e)=>e.toLowerCase()).includes(input_word.toLowerCase())){
         word_path.push(input_word);
         document.getElementById("caution-same").innerText = "";  
         
         if (atSection1) {
+          lastWordIndex++;
           changeSection1Inputs();
           addScore();  
         }
@@ -62,15 +60,15 @@ function add_to_path(){
 }
 
 function changeSection1Inputs() {
-  document.getElementById('section1-input-1').innerText = (word_path.length-2<=0)?" ":word_path[word_path.length-3];
-  document.getElementById('section1-input-2').innerText = (word_path.length-1<=0)?" ":word_path[word_path.length-2];
-  document.getElementById('section1-input-3').innerText = word_path[word_path.length-1]
+  document.getElementById('section1-input-1').innerText = (lastWordIndex-2<0)?" ":word_path[lastWordIndex-2];
+  document.getElementById('section1-input-2').innerText = (lastWordIndex-1<0)?" ":word_path[lastWordIndex-1];
+  document.getElementById('section1-input-3').innerText = (lastWordIndex<0)?" ":word_path[lastWordIndex]
 }
 
 function changeSection2Inputs() {
   document.getElementById('section2-input-1').innerText = (word_path.length-3<=lastWordIndex)?" ":word_path[word_path.length-3];
   document.getElementById('section2-input-2').innerText = (word_path.length-2<=lastWordIndex)?" ":word_path[word_path.length-2];
-  document.getElementById('section2-input-3').innerText = (word_path.length-1==lastWordIndex)?" ":word_path[word_path.length-1];
+  document.getElementById('section2-input-3').innerText = (word_path.length-1<=lastWordIndex)?" ":word_path[word_path.length-1];
 }
 
 // not allow any submissions to the word chain
@@ -140,9 +138,8 @@ function breakMoment() {
   clearInterval(timer);
   timer = setInterval(breakTimerDecrease, 1000);
   document.getElementById('timer').innerHTML = " ";
-  lastWordIndex = (word_path[0]==" ")?-1:word_path.length-1;
   atSection1 = false;
-  var text = (word_path[0]==" ")?"You did not input any words":"Your last word: "+word_path[word_path.length-1];
+  var text = (word_path.length==0)?"You did not input any words":"Your last word: "+word_path[lastWordIndex];
   document.getElementById("last-word").innerHTML = text;
   var timer_stop = setTimeout(section2, breakTime*1000);
 }
@@ -193,6 +190,56 @@ function addScore() {
 
 function showScore() {
   document.getElementById('score').innerHTML = `score{${playerScore}}-penalty{${penalty}}`;
+}
+
+
+// BUTTONS FOR THE WORD CHAIN, LISTENING FOR DELETION (occrs on click)
+const but1 = document.getElementById('section1-input-1');
+const but2 = document.getElementById('section1-input-2');
+const but3 = document.getElementById('section1-input-3');
+
+but1.addEventListener("click", ()=>deleteWord(1))
+but2.addEventListener("click", ()=>deleteWord(2))
+but3.addEventListener("click", ()=>deleteWord(3))
+
+const but4 = document.getElementById('section2-input-1');
+const but5 = document.getElementById('section2-input-2');
+const but6 = document.getElementById('section2-input-3');
+
+but4.addEventListener("click", ()=>deleteWord(1))
+but5.addEventListener("click", ()=>deleteWord(2))
+but6.addEventListener("click", ()=>deleteWord(3))
+
+// triggered when word is clicked to be deleted 
+function deleteWord(but) {
+  // occurs during section 1
+  if (atSection1) {
+    // get the content from the button being pressed
+    var button = document.getElementById('section1-input-'+but);
+    // if button is empty, no word to delete
+    if (button.innerHTML!==" "){
+      // delete relevant word from word path array
+      word_path.splice(lastWordIndex-3+but,1);
+      // reduce last word in section1 index
+      lastWordIndex--;
+      // player score decreases due to deletion
+      playerScore--;
+      // update words on button
+      changeSection1Inputs();
+    }
+  }
+  // occurs during section 2
+  else {
+    // get the content from the button being pressed
+    var button = document.getElementById('section2-input-'+but);
+    // if button is empty, no word to delete
+    if (button.innerHTML!==" "){
+      // delete relevant word from worth path array
+      word_path.splice(word_path.length-4+but,1);
+      // update words on button
+      changeSection2Inputs();
+    }
+  }
 }
 
 startLoading();

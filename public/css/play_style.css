@@ -18,44 +18,64 @@ a{
 
 .section1-group{
     position: absolute;
-    top: 46%;
+    top: 46.8%;
     left: 16%;
     display: table;
     width: 30%;
     height: 10%;
-    color: rgb(131, 79, 79); 
-    font-size: 1.3vw;
-    table-layout: fixed;
     word-wrap: break-word;
+    text-align: center;
+}
 
-
+.section1-inputs:hover{
+    background-color: rgb(131, 79, 79);
+    transition: all 0.15s linear;
+    color: rgb(255, 245, 230);
+    border: none;
 }
 
 .section1-inputs{
-    display: table-cell;
+    font-family: 'Times New Roman';
+    display: inline-block;
     text-align: center;
-    padding: 3%;
+    color: rgb(131, 79, 79); 
+    font-size: 1.3vw;
+    background-color: rgb(255, 245, 230);
+    width: 30%;
+    margin: 1%;
+    border: none;
+    outline: none;
 }
 
 .section2-group{
     position: absolute;
-    top: 46%;
+    top: 46.8%;
     right: 16%;
     display: table;
     width: 30%;
     height: 10%;
-    color: rgb(131, 79, 79); 
-    font-size: 1.3vw;
-    table-layout: fixed;
     word-wrap: break-word;
+    text-align: center;
+}
 
-
+.section2-inputs:hover{
+    background-color: rgb(131, 79, 79);
+    transition: all 0.15s linear;
+    color: rgb(255, 245, 230);
+    border: none;
 }
 
 .section2-inputs{
-    display: table-cell;
+    font-family: 'Times New Roman';
+    display: inline-block;
     text-align: center;
-    padding: 3%;
+    color: rgb(131, 79, 79); 
+    font-size: 1.3vw;
+    background-color: rgb(255, 245, 230);
+    width: 30%;
+    margin: 1%;
+    border: none;
+    outline: none;
 }
 
 .line{
