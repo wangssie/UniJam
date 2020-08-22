@@ -9,6 +9,19 @@ body{
     color: rgb(131, 79, 79);
 }
 
+#round-count{
+    position: absolute;
+    top: 0%;
+    color: rgb(131, 79, 79);
+    font-family: monospace;
+    font-style: bold;
+    font-size: 1.4vw;
+    display: inline;
+
+    text-align : left;
+    left: 45.5%;
+}
+
 #list-title{
 
     position: absolute;
@@ -33,6 +46,9 @@ body{
 #word-list{
 
     position: absolute;
+    display: table;
+    table-layout: fixed;
+    width: 16%;
     top: 20%;
     left: 9.5%;
     color: rgb(131, 79, 79);
@@ -44,8 +60,8 @@ body{
 #word-list li{
 
     list-style-type: none;
-    margin: 0% 0% 7% 0%;;
-
+    overflow-wrap: break-word;
+    margin: 0% 0% 5% 0%;
 }
 
 @keyframes increase {

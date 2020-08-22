@@ -305,3 +305,13 @@ body{
     color: rgb(131, 79, 79);
 }
 
+#caution-same{
+
+    position: absolute;
+    top: 72%;
+    left: 36%;
+    font-size: 2vw;
+    font-family: monospace;
+    color: rgb(131, 79, 79);
+
+}

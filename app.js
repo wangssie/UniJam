@@ -79,7 +79,8 @@ app.get("/check", function(req, res){
     res.render("check", {words: GameDataBase.currentPlayersList,
     player_name: GameDataBase.players[GameDataBase.currentPlayer].username,
     score: GameDataBase.players[GameDataBase.currentPlayer].score,
-    continue_path: cont_href});
+    continue_path: cont_href,
+    round: GameDataBase.roundsPlayed + 1});
 
     
 });
