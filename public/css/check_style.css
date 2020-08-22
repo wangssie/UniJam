@@ -35,7 +35,7 @@ body{
 
 .line{
     position: absolute;
-    top: 20%;
+    top: 23.5%;
     left: 32%;
     border-left: 5px solid rgb(131, 79, 79);
     height: 0px;
@@ -71,17 +71,16 @@ body{
 }
 
 #player-name{
-    
     position: absolute;
-    bottom: 92%;
-    left: 70%;
+    top: 0%;
     color: rgb(131, 79, 79);
-    text-align: right;
     font-family: monospace;
     font-style: bold;
     font-size: 1.4vw;
-    width: 29%;
+    display: inline;
 
+    text-align: right;
+    right: 2%;
 }
 
 #cancel-prompt{

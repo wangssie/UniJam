@@ -97,8 +97,8 @@ a:visited {
     position: absolute;
     color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.2vw;
-    top: 21%;
+    font-size: 1.6vw;
+    top: 16%;
     left: 49%;
     padding-right: 50px;
 }
@@ -109,7 +109,7 @@ a:visited {
     color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.3vw;
-    top: 40%;
+    top: 26%;
     left: 49%;
     padding-right: 50px;
 }
@@ -119,17 +119,17 @@ a:visited {
     color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.3vw;
-    top: 52.5%;
+    top: 45.5%;
     left: 49%;
     padding-right: 50px;
 }
 
-#round3{
+#check{
     position: absolute;
     color: rgb(131, 79, 79);   
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.3vw;
-    top: 66%;
+    top: 70.5%;
     left: 49%;
     padding-right: 50px;
 }
