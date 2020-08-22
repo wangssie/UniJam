@@ -78,6 +78,19 @@ a{
     outline: none;
 }
 
+#section1-input-1{
+    opacity:0;
+}
+
+#section1-input-2{
+    opacity:0;
+}
+
+#section1-input-3{
+    opacity:0;
+}
+
+
 .line{
     position: absolute;
     top: 30%;

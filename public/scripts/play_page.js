@@ -99,6 +99,15 @@ function makeVisible() {
   document.getElementById('last-word').style.opacity=1;
   document.getElementById('score').style.opacity=1;
 
+  var sect1 = document.getElementsByClassName('section1-inputs');
+  for(let i=0; i<sect1.length; i++) {
+    sect1[i].style.opactiy = 1;
+  }
+  var sect2 = document.getElementsByClassName('section2-inputs');
+  for(let i=0; i<sect2.length;i++) {
+    sect2[i].style.opactiy = 1;
+  }
+
   document.getElementById('round-start').style.opacity=0;
   document.getElementById('playing-start').style.opacity=0;
   
@@ -222,8 +231,9 @@ function deleteWord(but) {
       word_path.splice(lastWordIndex-3+but,1);
       // reduce last word in section1 index
       lastWordIndex--;
-      // player score decreases due to deletion
+      // player score decreases due to deletion and show new score
       playerScore--;
+      showScore();
       // update words on button
       changeSection1Inputs();
     }
