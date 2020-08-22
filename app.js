@@ -54,8 +54,9 @@ app.post('/play', function(req, res) {
 
     req.body.word_path.push(GameDataBase.lastWord);
     GameDataBase.currentPlayersList = GameDataBase.currentPlayersList.concat(req.body.word_path);
-    let netScore = req.body.netScore;
+    let netScore = Number(req.body.netScore);
     GameDataBase.players[GameDataBase.currentPlayer].addScore(netScore);
+    console.log("Database of players after sending info from play: ",GameDataBase.players);
 })
 
 app.get("/Instructions", function(req, res){
@@ -84,11 +85,8 @@ app.get("/check", function(req, res){
 });
 
 app.post("/check", function(req, res){
-    
-    GameDataBase.players[GameDataBase.currentPlayer].setScore(req.body.score);
+    GameDataBase.players[GameDataBase.currentPlayer].setScore(Number(req.body.score));
     Check.nextRound();
-    console.log("Database of players: ",GameDataBase.players);
-
 });
 
 app.get("/end", function(req, res){

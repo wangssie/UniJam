@@ -12,7 +12,8 @@ var lastWordIndex;
 // section 
 var atSection1 = true;
 // user 
-var playerScore = document.getElementById('score').getAttribute('data-set');
+var playerTotalScore = Number(document.getElementById('score').getAttribute('data-set'));
+var playerScore = 0;
 var penalty=0;
 
 var input = document.getElementById("next-word-input");
@@ -43,7 +44,6 @@ function add_to_path(){
       else {
         changeSection2Inputs();
       }
-      console.log(word_path);
       document.getElementById("next-word-input").value = "";
     }
 
@@ -120,7 +120,6 @@ function loadingTimerDecrease() {
     
 function timerDecrease() {
       timerLimit1--;
-      console.log("timer: ", timerLimit1);
       timerLimit1 = timerLimit1 >= 0? timerLimit1:0;
       document.getElementById('timer').innerHTML = ("0"+timerLimit1).slice(-2);
 }
@@ -157,7 +156,6 @@ function timerIncrease() {
       penalty++;
       showScore();
     }
-    console.log("timer: ", timerLimit1);
     document.getElementById('timer').innerHTML = ("0"+timerLimit1).slice(-2);
 }
 
