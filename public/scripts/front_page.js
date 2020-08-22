@@ -6,15 +6,16 @@ var input = document.getElementById("input-box");
 input.addEventListener("keyup", function(event) {
   
   if (event.keyCode === 13) {
-    
+    var input = document.getElementById("input-box").value;
     event.preventDefault();
-    // submit input of username ONLY if maxPlayers hasn't been reached
-    if (joined_list.length < maxPlayers) {
-        document.getElementById("submit").click();
-    }
-    else {
+    // max players reached
+    if (joined_list.length >= maxPlayers) {
         // show error message 
         document.getElementById("error-message").innerHTML = "Maximum players reached!";
+    }
+    else if (input === "") {}
+    else {
+        document.getElementById("submit").click();
     }
   }
 });
