@@ -1,21 +1,22 @@
 //timer constants
-const timerLimit = 5;
-var timerLimit1 = timerLimit;
-var loadingTime =4;
-var breakTime = 4;
+var loadingTime =4; // length of loading time before round starts
+const timerLimit = 5; // section1 time limit 
+var timerLimit1 = timerLimit; // timer integer variable for section 1 
+var breakTime = 4;  // length of break before section 2 starts
 // submit
-var allowSubmit = false;
+var allowSubmit = false; // allow player to submit word 
 // word path
-var word_path = [" "];
-var lastWord = ''
-var lastWordIndex;
+var word_path = [" "];  // the players word chain
+var endWord = '' // the end word for section 2
+var lastWordIndex; // the index of the last word submitted in section 1
 // section 
-var atSection1 = true;
+var atSection1 = true; // if user is current playing section 1 or section 2
 // user 
-var playerTotalScore = Number(document.getElementById('score').getAttribute('data-set'));
-var playerScore = 0;
-var penalty=0;
+var playerTotalScore = Number(document.getElementById('score').getAttribute('data-set')); // players overall total score in game
+var playerScore = 0; // players score for THIS round
+var penalty=0;  // players penalty for this round
 
+// input for 
 var input = document.getElementById("next-word-input");
 
 input.addEventListener("keyup", function(event) {
@@ -96,7 +97,7 @@ function makeVisible() {
 var timer;
 
 function startLoading() {
-  lastWord = document.getElementById('end-word').innerText;
+  endWord = document.getElementById('end-word').innerText;
   document.getElementById('end-word').innerText = '-';
   const timeStop = loadingTime;
   timer = setInterval(loadingTimerDecrease, 1000);
@@ -144,7 +145,7 @@ function section2() {
     openSubmit();
     clearInterval(timer);
     document.getElementById('next-button').style.opacity=1;
-    document.getElementById('end-word').innerText = lastWord;
+    document.getElementById('end-word').innerText = endWord;
     document.getElementById("last-word").style.opacity = 0;
     document.getElementById("end-word").style.opacity = 1;
     timer = setInterval(timerIncrease, 1000) 
