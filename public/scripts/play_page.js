@@ -36,15 +36,24 @@ function add_to_path(){
       if (word_path[0] == " ") {
         word_path = [];
       }
-      word_path.push(input_word);
-      addScore();
-      
-      if (atSection1) {
-        changeSection1Inputs();
+
+      if (!word_path.map((e)=>e.toLowerCase()).includes(input_word.toLowerCase())){
+        word_path.push(input_word);
+        addScore();  
+        document.getElementById("caution-same").innerText = "";  
+
+        if (atSection1) {
+          changeSection1Inputs();
+        }
+        else {
+          
+          changeSection2Inputs();
+        }
       }
-      else {
-        changeSection2Inputs();
+      else{
+        document.getElementById("caution-same").innerText = "Can't enter existing word!";     
       }
+    
       document.getElementById("next-word-input").value = "";
     }
 
@@ -129,7 +138,7 @@ function breakMoment() {
   clearInterval(timer);
   timer = setInterval(breakTimerDecrease, 1000);
   document.getElementById('timer').innerHTML = " ";
-  lastWordIndex = (word_path[0]==" ")?0:word_path.length-1;
+  lastWordIndex = (word_path[0]==" ")?-1:word_path.length-1;
   atSection1 = false;
   var text = (word_path[0]==" ")?"You did not input any words":"Your last word: "+word_path[word_path.length-1];
   document.getElementById("last-word").innerHTML = text;
