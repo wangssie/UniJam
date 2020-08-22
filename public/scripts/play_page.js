@@ -60,15 +60,63 @@ function add_to_path(){
 }
 
 function changeSection1Inputs() {
-  document.getElementById('section1-input-1').innerText = (lastWordIndex-2<0)?" ":word_path[lastWordIndex-2];
-  document.getElementById('section1-input-2').innerText = (lastWordIndex-1<0)?" ":word_path[lastWordIndex-1];
-  document.getElementById('section1-input-3').innerText = (lastWordIndex<0)?" ":word_path[lastWordIndex]
+  if (lastWordIndex-2<0){
+    document.getElementById('section1-input-1').innerText = " ";
+    document.getElementById('section1-input-1').style.opacity = 0;
+  }
+  else{
+    document.getElementById('section1-input-1').innerText = word_path[lastWordIndex-2];
+    document.getElementById('section1-input-1').style.opacity = 1;
+  }
+
+  if (lastWordIndex-1<0){
+    document.getElementById('section1-input-2').innerText = " ";
+    document.getElementById('section1-input-2').style.opacity = 0;
+  }
+  else{
+    document.getElementById('section1-input-2').innerText = word_path[lastWordIndex-1];
+    document.getElementById('section1-input-2').style.opacity = 1;
+  }
+
+  if (lastWordIndex<0){
+    document.getElementById('section1-input-3').innerText = " ";
+    document.getElementById('section1-input-3').style.opacity = 0;
+  }
+  else{
+    document.getElementById('section1-input-3').innerText = word_path[lastWordIndex];
+    document.getElementById('section1-input-3').style.opacity = 1;
+  }
 }
 
 function changeSection2Inputs() {
-  document.getElementById('section2-input-1').innerText = (word_path.length-3<=lastWordIndex)?" ":word_path[word_path.length-3];
-  document.getElementById('section2-input-2').innerText = (word_path.length-2<=lastWordIndex)?" ":word_path[word_path.length-2];
-  document.getElementById('section2-input-3').innerText = (word_path.length-1<=lastWordIndex)?" ":word_path[word_path.length-1];
+
+  if (word_path.length-3<=lastWordIndex){
+    document.getElementById('section2-input-1').innerText = " ";
+    document.getElementById('section2-input-1').style.opacity = 0;
+  }
+  else{
+    document.getElementById('section2-input-1').innerText = word_path[word_path.length-3];
+    document.getElementById('section2-input-1').style.opacity = 1;
+  }
+
+  if (word_path.length-2<=lastWordIndex){
+    document.getElementById('section2-input-2').innerText = " ";
+    document.getElementById('section2-input-2').style.opacity = 0;
+  }
+  else{
+    document.getElementById('section2-input-2').innerText = word_path[word_path.length-2];
+    document.getElementById('section2-input-2').style.opacity = 1;
+  }
+
+  if (word_path.length-1<=lastWordIndex){
+    document.getElementById('section2-input-3').innerText = " ";
+    document.getElementById('section2-input-3').style.opacity = 0;
+  }
+  else{
+    document.getElementById('section2-input-3').innerText = word_path[word_path.length-1];
+    document.getElementById('section2-input-3').style.opacity = 1;
+  }
+
 }
 
 // not allow any submissions to the word chain
@@ -99,14 +147,14 @@ function makeVisible() {
   document.getElementById('last-word').style.opacity=1;
   document.getElementById('score').style.opacity=1;
 
-  var sect1 = document.getElementsByClassName('section1-inputs');
+  /*var sect1 = document.getElementsByClassName('section1-inputs');
   for(let i=0; i<sect1.length; i++) {
-    sect1[i].style.opactiy = 1;
+    sect1[i].style.opacity = 1;
   }
   var sect2 = document.getElementsByClassName('section2-inputs');
   for(let i=0; i<sect2.length;i++) {
-    sect2[i].style.opactiy = 1;
-  }
+    sect2[i].style.opacity = 1;
+  }*/
 
   document.getElementById('round-start').style.opacity=0;
   document.getElementById('playing-start').style.opacity=0;
@@ -203,32 +251,21 @@ function showScore() {
 
 
 // BUTTONS FOR THE WORD CHAIN, LISTENING FOR DELETION (occrs on click)
-const but1 = document.getElementById('section1-input-1');
-const but2 = document.getElementById('section1-input-2');
-const but3 = document.getElementById('section1-input-3');
-
-but1.addEventListener("click", ()=>deleteWord(1))
-but2.addEventListener("click", ()=>deleteWord(2))
-but3.addEventListener("click", ()=>deleteWord(3))
-
-const but4 = document.getElementById('section2-input-1');
-const but5 = document.getElementById('section2-input-2');
-const but6 = document.getElementById('section2-input-3');
-
-but4.addEventListener("click", ()=>deleteWord(1))
-but5.addEventListener("click", ()=>deleteWord(2))
-but6.addEventListener("click", ()=>deleteWord(3))
 
 // triggered when word is clicked to be deleted 
-function deleteWord(but) {
+function deleteWord(but_id) {
+
+  console.log(but_id);
   // occurs during section 1
   if (atSection1) {
     // get the content from the button being pressed
-    var button = document.getElementById('section1-input-'+but);
+    var button = document.getElementById(but_id);
     // if button is empty, no word to delete
-    if (button.innerHTML!==" "){
+    if (button.innerHTML !== ""){
       // delete relevant word from word path array
-      word_path.splice(lastWordIndex-3+but,1);
+      let index = word_path.indexOf(button.innerHTML);
+      console.log(index);
+      word_path.splice(index,1);
       // reduce last word in section1 index
       lastWordIndex--;
       // player score decreases due to deletion and show new score
@@ -241,13 +278,17 @@ function deleteWord(but) {
   // occurs during section 2
   else {
     // get the content from the button being pressed
-    var button = document.getElementById('section2-input-'+but);
-    // if button is empty, no word to delete
-    if (button.innerHTML!==" "){
-      // delete relevant word from worth path array
-      word_path.splice(word_path.length-4+but,1);
-      // update words on button
-      changeSection2Inputs();
+    var button = document.getElementById(but_id);
+    console.log(button.innerHTML.split("-")[0]);
+    if (but_id.split("-")[0] == "section2"){
+      // if button is empty, no word to delete
+      if (button.innerHTML !== ""){
+        // delete relevant word from worth path array
+        let index = word_path.indexOf(button.innerHTML);
+        word_path.splice(index,1);
+        // update words on button
+        changeSection2Inputs();
+      }
     }
   }
 }

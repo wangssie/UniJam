@@ -79,16 +79,28 @@ a{
 }
 
 #section1-input-1{
-    opacity:0;
+    opacity: 0;
 }
 
 #section1-input-2{
-    opacity:0;
+    opacity: 0;
 }
 
 #section1-input-3{
-    opacity:0;
+    opacity: 0;
+} 
+
+#section2-input-1{
+    opacity: 0;
 }
+
+#section2-input-2{
+    opacity: 0;
+}
+
+#section2-input-3{
+    opacity: 0;
+} 
 
 
 .line{
