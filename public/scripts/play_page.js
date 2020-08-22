@@ -37,8 +37,8 @@ function add_to_path(){
     if (allowSubmit) {
       let input_word = input.value;
 
-      if (!word_path.map((e)=>e.toLowerCase()).includes(input_word.toLowerCase())){
-        word_path.push(input_word);
+      if (!word_path.map((e)=>e.toLowerCase()).includes(input_word.toLowerCase().trim())){
+        word_path.push(input_word.trim());
         document.getElementById("caution-same").innerText = "";  
         
         if (atSection1) {
