@@ -92,23 +92,27 @@ app.post("/check", function(req, res){
 
 app.get("/end", function(req, res){
 
-    let player_winner;
+    let player_winner, player_loser;
 
     if (GameDataBase.players[0].score > GameDataBase.players[1].score){
         player_winner = GameDataBase.players[0].username;
+        player_loser = GameDataBase.players[1].username;
     }
     else if (GameDataBase.players[0].score < GameDataBase.players[1].score){
         player_winner = GameDataBase.players[1].username;
+        player_loser = GameDataBase.players[0].username;
     }
     else{
         player_winner = "Nobody";
+        player_loser = "";
     }
 
     res.render("end", {player1_score: GameDataBase.players[0].score,
     player2_score: GameDataBase.players[1].score,
     player1_name: GameDataBase.players[0].username,
     player2_name: GameDataBase.players[1].username,
-    winner: player_winner});
+    winner: player_winner,
+    loser: player_loser});
 
 });
 
