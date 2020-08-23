@@ -39,6 +39,8 @@ function cancel_word(){
     let name = document.getElementById("input-prompt").value;
     let score = document.getElementById("show-score").innerText.trim().split(" ");
     console.log("word link arr: ", word_link_arr);
+    console.log("here's the score:",score);
+
 
     if (word_link_arr.includes(name.toLowerCase())){ // check if lower case input matches anythign in relevant array
         document.getElementById("caution").innerHTML = "";
@@ -47,7 +49,7 @@ function cancel_word(){
         console.log("index to cancel",index);
         word_link_arr.splice(index, 1);
 
-        document.getElementById('show-score').innerHTML = "Score: " + (score[1] - 1);   
+        document.getElementById('show-score').innerHTML = "Total Score: " + (score[2] - 1);   
 
     }
     else{
