@@ -62,7 +62,7 @@ function cancel_word(){
 
 function submit_score(){
 
-    let score = document.getElementById("show-score").innerText.trim().split(" ")[1];
+    let score = document.getElementById("show-score").innerText.trim().split(" ")[2];
     let data = {score}
 
     const options = {
