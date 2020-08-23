@@ -261,7 +261,7 @@ function deleteWord(but_id) {
     // get the content from the button being pressed
     var button = document.getElementById(but_id);
     // if button is empty, no word to delete
-    if (button.innerHTML !== ""){
+    if (button.innerHTML !== " "){
       // delete relevant word from word path array
       let index = word_path.indexOf(button.innerHTML);
       console.log(index);
@@ -282,7 +282,7 @@ function deleteWord(but_id) {
     console.log(button.innerHTML.split("-")[0]);
     if (but_id.split("-")[0] == "section2"){
       // if button is empty, no word to delete
-      if (button.innerHTML !== ""){
+      if (button.innerHTML !== " "){
         // delete relevant word from worth path array
         let index = word_path.indexOf(button.innerHTML);
         word_path.splice(index,1);
