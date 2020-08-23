@@ -54,6 +54,9 @@ app.get("/play", function(req, res){
 
 app.post('/play', function(req, res) {
 
+    console.log("req body word path: ", req.body.word_path);
+    console.log("Gamedatabase.LastWord: ", GameDataBase.lastWord);
+
     req.body.word_path.push(GameDataBase.lastWord);
     GameDataBase.currentPlayersList = GameDataBase.currentPlayersList.concat(req.body.word_path);
 
