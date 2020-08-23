@@ -6,6 +6,7 @@ const GameDataBase = require('./public/scripts/GameDatabase');
 const Player = require('./public/scripts/player');
 const Check = require('./public/scripts/check');
 const End = require('./public/scripts/end');
+const GameDatabase = require('./public/scripts/GameDatabase');
 var app = express();
 
 app.use(express.json({limit: '1mb'}));
@@ -55,6 +56,9 @@ app.post('/play', function(req, res) {
 
     req.body.word_path.push(GameDataBase.lastWord);
     GameDataBase.currentPlayersList = GameDataBase.currentPlayersList.concat(req.body.word_path);
+
+    console.log("Player list of words ", GameDataBase.currentPlayersList);
+
     let netScore = Number(req.body.netScore);
     GameDataBase.players[GameDataBase.currentPlayer].addScore(netScore);
     console.log("Database of players after sending info from play: ",GameDataBase.players);
